@@ -1,0 +1,116 @@
+/// Main Styles File
+/// Here we import all the global Styles files we need for our project.
+
+@import "style/normalize.scss";
+@import "style/root.scss";
+@import "style/fonts.scss";
+
+body {
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $background-color;
+  color: $font-color;
+}
+
+#home-page {
+  position: relative;
+  width: 1440px;
+  height: 810px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  position: absolute;
+  width: 467px;
+  height: 232px;
+  left: 152px;
+  top: 159px;
+
+  h1 {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.002em;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400px;
+  }
+}
+
+@mixin small-box($left, $top, $bgc) {
+  position: absolute;
+  width: 268px;
+  height: 240px;
+  left: $left;
+  top: $top;
+  background: $background-color-box;
+  border-radius: 24px;
+
+  div {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    left: 102px;
+    top: 24px;
+    background: $bgc;
+    border-radius: 16px;
+
+    img {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      left: 16px;
+      top: 16px;
+    }
+  }
+
+  h1 {
+    position: absolute;
+    width: 263px;
+    height: 24px;
+    left: 2px;
+    top: 104px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  p {
+    position: absolute;
+    width: 236px;
+    height: 72px;
+    left: 16px;
+    top: 144px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    opacity: 0.5;
+  }
+}
+
+.content-box-1 {
+  @include small-box(728px, 159px, #373155);
+}
+
+.content-box-2 {
+  @include small-box(1020px, 159px, #2c3455);
+}
+.content-box-3 {
+  @include small-box(728px, 430px, #274255);
+}
+.content-box-4 {
+  @include small-box(1020px, 430px, #3d413f);
+}
