@@ -2,6 +2,8 @@ const techCard = document.querySelectorAll('.card');
 const techTitleOne = document.querySelectorAll('.nameOne');
 const techTitleTwo = document.querySelectorAll('.nameTwo');
 const techTitleThree = document.querySelectorAll('.nameThree');
+const itemtech = document.querySelectorAll('.item');
+const titletech = document.querySelectorAll('.item p');
 const colorArray = ['ff605c', 'ffbd44', '00ca4e'];
 
 techCard.forEach((card) => {
@@ -17,6 +19,16 @@ techCard.forEach((card) => {
       title.style.color = `#${colorArray[i]}`;
     });
     techTitleThree.forEach((title) => {
+      let i = 0;
+      i = Math.floor(Math.random() * colorArray.length);
+      title.style.color = `#${colorArray[i]}`;
+    });
+  });
+});
+
+itemtech.forEach((item) => {
+  item.addEventListener('mouseenter', () => {
+    titletech.forEach((title) => {
       let i = 0;
       i = Math.floor(Math.random() * colorArray.length);
       title.style.color = `#${colorArray[i]}`;
