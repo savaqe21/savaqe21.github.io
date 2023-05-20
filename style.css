@@ -360,24 +360,87 @@ div.feature {
 
 /*sekcja about*/
 
-.about {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 20px 140px;
+@media (min-width: 320px) {
+  .about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    flex-direction: column;
+  }
+
+  .about h1 {
+    font-family: var(--second-font);
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .about p {
+    font-family: var(--main-font);
+    font-size: 18px;
+  }
 }
 
-.about h1 {
-  font-family: var(--second-font);
-  font-size: 50px;
-  width: 25%;
-  text-align: center;
+@media (min-width: 410px) {
+  .about h1 {
+    font-size: 36px;
+  }
+
+  .about p {
+    font-size: 22px;
+  }
 }
 
-.about p {
-  font-family: var(--main-font);
-  font-size: 26px;
-  width: 75%;
+@media (min-width: 760px) {
+  .about h1 {
+    font-size: 50px;
+    padding-bottom: 30px;
+  }
+
+  .about p {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1023px) {
+  .about {
+    flex-direction: row;
+    padding: 80px 20px 140px;
+  }
+
+  .about h1 {
+    font-family: var(--second-font);
+    font-size: 40px;
+    width: 25%;
+    padding-bottom: 0;
+  }
+
+  .about p {
+    font-family: var(--main-font);
+    font-size: 24px;
+    width: 75%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .about h1 {
+    font-size: 50px;
+  }
+
+  .about p {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .about h1 {
+    font-size: 50px;
+  }
+
+  .about p {
+    font-size: 26px;
+  }
 }
 
 /* sekcja portfolio */
