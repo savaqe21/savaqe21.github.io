@@ -28,6 +28,10 @@
   display: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 header {
   position: relative;
   height: 100vh;
@@ -275,13 +279,6 @@ div.feature {
   text-transform: uppercase;
 }
 
-.features p {
-  font-family: var(--main-font);
-  font-size: 12px;
-  font-weight: 300;
-  margin: 20px 0;
-}
-
 .features lottie-player {
   width: 100%;
   margin: 5px 0;
@@ -295,9 +292,6 @@ div.feature {
 
   .features h2 {
     font-size: 24px;
-  }
-  .features p {
-    font-size: 14px;
   }
 }
 
@@ -315,9 +309,6 @@ div.feature {
 
   .features h2 {
     font-size: 26px;
-  }
-  .features p {
-    font-size: 18px;
   }
 
   .features lottie-player {
@@ -343,10 +334,6 @@ div.feature {
   .features h2 {
     font-size: 20px;
   }
-  .features p {
-    font-size: 14px;
-    margin: 20px 0 -30px;
-  }
 
   .features lottie-player {
     transform: scale(0.8);
@@ -365,15 +352,32 @@ div.feature {
   .features h2 {
     font-size: 28px;
   }
-  .features p {
-    font-size: 18px;
-    line-height: 140%;
-    padding: 0 10px;
-  }
 
   .features lottie-player {
     transform: scale(1);
   }
+}
+
+/*sekcja about*/
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 140px;
+}
+
+.about h1 {
+  font-family: var(--second-font);
+  font-size: 50px;
+  width: 25%;
+  text-align: center;
+}
+
+.about p {
+  font-family: var(--main-font);
+  font-size: 26px;
+  width: 75%;
 }
 
 /* sekcja portfolio */
