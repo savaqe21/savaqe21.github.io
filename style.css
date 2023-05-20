@@ -32,6 +32,17 @@ a {
   text-decoration: none;
 }
 
+hr.style-hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
+
 header {
   position: relative;
   height: 100vh;
@@ -82,8 +93,8 @@ header button,
   line-height: 32px;
   padding: 0 20px;
   text-transform: uppercase;
-  color: var(--appleyellow);
   background-color: transparent;
+  color: var(--appleyellow);
   font-size: 12px;
   border: 2px solid var(--appleyellow);
   border-radius: 20px;
@@ -91,10 +102,10 @@ header button,
 
 @media (min-width: 320px) {
   header h1 {
-    font-size: 24px;
+    font-size: 26px;
   }
   header h2 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   header button,
@@ -113,10 +124,10 @@ header button,
 
 @media (min-width: 410px) {
   header h1 {
-    font-size: 26px;
+    font-size: 30px;
   }
   header h2 {
-    font-size: 26px;
+    font-size: 30px;
   }
 
   header button,
@@ -138,17 +149,17 @@ header button,
     font-size: 80px;
   }
   header h1 {
-    font-size: 42px;
+    font-size: 45px;
   }
   header h2 {
-    font-size: 32px;
+    font-size: 35px;
   }
 
   header button,
   .btn-more {
     margin-top: 60px;
-    line-height: 70px;
-    font-size: 30px;
+    line-height: 80px;
+    font-size: 35px;
   }
 
   header lottie-player {
@@ -168,16 +179,16 @@ header button,
   }
   header h1 {
     margin-top: 40px;
-    font-size: 34px;
+    font-size: 38px;
   }
   header h2 {
-    font-size: 34px;
+    font-size: 38px;
   }
   header button,
   .btn-more {
     margin-top: 40px;
-    font-size: 28px;
-    line-height: 70px;
+    font-size: 30px;
+    line-height: 80px;
   }
 
   header lottie-player {
@@ -205,25 +216,25 @@ header button,
   }
   header h1 {
     margin-top: 40px;
-    font-size: 50px;
+    font-size: 55px;
   }
   header h2 {
-    font-size: 50px;
+    font-size: 55px;
   }
   header button {
     margin-top: 100px;
-    font-size: 34px;
-    line-height: 80px;
+    font-size: 38px;
+    line-height: 90px;
     padding: 0 40px;
     border-width: 2px;
   }
 
   header lottie-player {
     height: 80%;
-    right: -20%;
+    right: -10%;
   }
 }
-
+/*
 @media (min-width: 1600px) {
   header div.welcome {
     left: 8%;
@@ -250,7 +261,7 @@ header button,
     right: -23%;
   }
 }
-
+*/
 /* Sekcja 1 nasze cechy */
 
 .features {
@@ -262,7 +273,7 @@ header button,
 
 .features h1 {
   font-family: var(--main-font);
-  font-size: 24px;
+  font-size: 26px;
   text-transform: uppercase;
 }
 
@@ -275,7 +286,7 @@ div.feature {
 
 .features h2 {
   font-family: var(--main-font);
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
@@ -285,17 +296,11 @@ div.feature {
   transform: scale(0.8);
 }
 
-@media (min-width: 360px) {
-  .features h1 {
-    font-size: 28px;
-  }
-
-  .features h2 {
-    font-size: 24px;
-  }
-}
-
 @media (min-width: 410px) {
+  .features h1 {
+    font-size: 32px;
+  }
+
   .features lottie-player {
     margin-bottom: 20px;
     transform: scale(0.9);
@@ -304,11 +309,11 @@ div.feature {
 
 @media (min-width: 760px) {
   .features h1 {
-    font-size: 36px;
+    font-size: 40px;
   }
 
   .features h2 {
-    font-size: 26px;
+    font-size: 32px;
   }
 
   .features lottie-player {
@@ -328,18 +333,18 @@ div.feature {
     padding: 20px;
   }
   .features h1 {
-    font-size: 36px;
+    font-size: 44px;
   }
 
   .features h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .features lottie-player {
     transform: scale(0.8);
   }
 }
-
+/*
 @media (min-width: 1600px) {
   .feature {
     padding: 20px 50px;
@@ -356,35 +361,44 @@ div.feature {
   .features lottie-player {
     transform: scale(1);
   }
-}
+}*/
 
 /*sekcja about*/
 
-@media (min-width: 320px) {
-  .about {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 20px;
-    flex-direction: column;
-  }
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  flex-direction: column;
+}
 
+.about h1 {
+  font-family: var(--second-font);
+  font-size: 26px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.about p {
+  font-family: var(--main-font);
+  font-size: 16px;
+}
+
+@media (min-width: 360px) {
   .about h1 {
-    font-family: var(--second-font);
-    font-size: 30px;
-    text-align: center;
-    padding-bottom: 20px;
+    font-size: 32px;
   }
 
   .about p {
-    font-family: var(--main-font);
-    font-size: 18px;
+    font-size: 22px;
   }
 }
 
 @media (min-width: 410px) {
   .about h1 {
     font-size: 36px;
+    padding-bottom: 30px;
   }
 
   .about p {
@@ -394,12 +408,12 @@ div.feature {
 
 @media (min-width: 760px) {
   .about h1 {
-    font-size: 50px;
-    padding-bottom: 30px;
+    font-size: 46px;
+    padding-bottom: 40px;
   }
 
   .about p {
-    font-size: 25px;
+    font-size: 26px;
   }
 }
 
@@ -411,28 +425,28 @@ div.feature {
 
   .about h1 {
     font-family: var(--second-font);
-    font-size: 40px;
-    width: 25%;
+    font-size: 44px;
+    width: 30%;
     padding-bottom: 0;
   }
 
   .about p {
     font-family: var(--main-font);
-    font-size: 24px;
-    width: 75%;
+    font-size: 22px;
+    width: 70%;
   }
 }
 
 @media (min-width: 1280px) {
   .about h1 {
-    font-size: 50px;
+    font-size: 55px;
   }
 
   .about p {
-    font-size: 26px;
+    font-size: 28px;
   }
 }
-
+/*
 @media (min-width: 1600px) {
   .about h1 {
     font-size: 50px;
@@ -441,7 +455,7 @@ div.feature {
   .about p {
     font-size: 26px;
   }
-}
+}*/
 
 /* sekcja portfolio */
 
@@ -450,7 +464,7 @@ div.feature {
 }
 
 .portfolio h1 {
-  font-size: 28px;
+  font-size: 26px;
   font-family: var(--main-font);
   text-align: center;
 }
@@ -563,6 +577,10 @@ div.feature {
 }
 
 @media (min-width: 410px) {
+  .portfolio h1 {
+    font-size: 32px;
+  }
+
   .portfolio-wrap {
     padding: 50px 15px;
   }
@@ -594,6 +612,10 @@ div.feature {
 }
 
 @media (min-width: 1023px) {
+  .portfolio h1 {
+    font-size: 44px;
+  }
+
   .card {
     height: 300px;
     width: 500px;
@@ -618,10 +640,6 @@ div.feature {
 }
 
 @media (min-width: 1300px) {
-  .portfolio h1 {
-    font-size: 45px;
-  }
-
   .card {
     height: 350px;
     width: 550px;
@@ -640,7 +658,7 @@ div.feature {
     transform: scale(1.2);
   }
 }
-
+/*
 @media (min-width: 1600px) {
   .portfolio h1 {
     font-size: 50px;
@@ -664,7 +682,7 @@ div.feature {
     margin-top: 0;
     transform: scale(1);
   }
-}
+}*/
 
 .show-more {
   width: 100%;
@@ -728,7 +746,7 @@ div.feature {
   padding: 20px;
   margin-bottom: 25px;
   text-align: center;
-  font-size: 28px;
+  font-size: 26px;
   text-transform: uppercase;
 }
 
@@ -771,7 +789,7 @@ div.feature {
   }
 
   .hobby h1 {
-    font-size: 45px;
+    font-size: 44px;
   }
 
   .hobby .item img {
@@ -790,10 +808,6 @@ div.feature {
 }
 
 @media (min-width: 1300px) {
-  .hobby h1 {
-    font-size: 50px;
-  }
-
   .hobby .item {
     height: 25vh;
     width: 50vh;
@@ -808,7 +822,7 @@ div.feature {
     font-size: 34px;
   }
 }
-
+/*
 @media (min-width: 1600px) {
   .hobby .item {
     height: 25vh;
@@ -824,7 +838,7 @@ div.feature {
     font-size: 38px;
   }
 }
-
+*/
 /*footer*/
 
 footer p {
