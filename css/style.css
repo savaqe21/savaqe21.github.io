@@ -1,0 +1,150 @@
+body {
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5dc; /* Beige color for day mode */
+  position: relative; /* Added for positioning the button */
+}
+
+.day-mode {
+  background-color: #f5f5dc; /* Beige */
+  color: #000000;
+}
+
+.night-mode {
+  background-color: #333333; /* Dark background for night mode */
+  color: #ffffff;
+}
+
+.container {
+  text-align: center;
+  background: rgba(
+    255,
+    245,
+    230,
+    0.95
+  ); /* Light beige/cream color for day mode */
+  border-radius: 15px; /* Rounded corners */
+  padding: 30px; /* Increased padding for more space */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  max-width: 400px; /* Maximum width for the container */
+  width: 90%; /* Responsive width */
+  transition: background 0.3s; /* Smooth transition for background color */
+}
+
+.day-mode .container {
+  background: rgba(
+    255,
+    245,
+    230,
+    0.95
+  ); /* Light beige/cream background for day mode */
+}
+
+.night-mode .container {
+  background: rgba(50, 50, 50, 0.9); /* Darker background for night mode */
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+input[type='range'] {
+  -webkit-appearance: none; /* Remove default styling */
+  appearance: none; /* Remove default styling */
+  width: 100%;
+  height: 8px; /* Height of the track */
+  border-radius: 5px; /* Rounded corners for the track */
+  background: #ddd; /* Track color */
+  outline: none; /* Remove outline */
+  margin: 10px 0; /* Margin for spacing */
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styling */
+  appearance: none; /* Remove default styling */
+  width: 20px; /* Width of the thumb */
+  height: 20px; /* Height of the thumb */
+  border-radius: 50%; /* Rounded thumb */
+  background: #007bff; /* Thumb color */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  transition: background 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+  background: #0056b3; /* Darker thumb color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 20px; /* Width of the thumb */
+  height: 20px; /* Height of the thumb */
+  border-radius: 50%; /* Rounded thumb */
+  background: #007bff; /* Thumb color */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  transition: background 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+input[type='range']::-moz-range-thumb:hover {
+  background: #0056b3; /* Darker thumb color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+button {
+  background: linear-gradient(
+    90deg,
+    #e0cda9,
+    #d1b89a
+  ); /* Gradient matching the beige background */
+  color: #333; /* Darker text for contrast */
+  border: none;
+  border-radius: 25px; /* More rounded corners */
+  padding: 10px 20px; /* Increased padding for a larger button */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s; /* Added transform for scale effect */
+  margin-top: 10px; /* Margin to separate from the input */
+}
+
+button:hover {
+  background: linear-gradient(
+    90deg,
+    #d1b89a,
+    #c1a78a
+  ); /* Darker gradient on hover */
+}
+
+/* Night mode button gradient */
+.night-mode button {
+  background: linear-gradient(
+    90deg,
+    #444444,
+    #555555
+  ); /* Dark gradient for night mode */
+  color: #ffffff; /* White text for contrast in night mode */
+}
+
+/* Positioning the night mode button */
+#toggleMode {
+  position: absolute; /* Positioning the button */
+  top: 20px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+}
+
+#info {
+  margin: 15px 0;
+}
