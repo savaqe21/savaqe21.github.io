@@ -171,3 +171,16 @@ button:active {
 button:active {
   opacity: 0.5;
 }
+
+/* menu */
+
+.heart-link {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 2.5em;
+  color: #e63946;
+  opacity: 0.8;
+  text-decoration: none;
+  z-index: 1000;
+}
