@@ -61,13 +61,13 @@ h1 {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
-  padding: 40px;
 }
 
 .sentence-box {
   width: 20%;
   text-align: center;
   padding: 50px;
+  margin: 20px;
   font-size: 1.3em;
 
   border-radius: 50px;
