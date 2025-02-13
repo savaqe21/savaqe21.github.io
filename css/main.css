@@ -685,6 +685,7 @@ strong {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 @media screen and (max-width: 630px) {
   .skills .skillz {
