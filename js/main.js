@@ -1,7 +1,8 @@
+//przelaczanie motywu strony
 $(function () {
   const d = new Date();
   const hours = d.getHours();
-  const night = hours >= 19 || hours <= 7; // between 7pm and 7am
+  const night = hours >= 19 || hours <= 7; // pomiedzy 7pm i 7am
   const body = document.querySelector('body');
   const toggle = document.getElementById('toggle');
   const input = document.getElementById('switch');
@@ -20,6 +21,7 @@ $(function () {
     }
   });
 
+  //element wracania na gore strony
   const introHeight = document.querySelector('.intro').offsetHeight;
   const topButton = document.getElementById('top-button');
   const $topButton = $('#top-button');
@@ -40,6 +42,7 @@ $(function () {
     $('html, body').animate({ scrollTop: 0 }, 500);
   });
 
+  //poruszajaca sie reka
   const hand = document.querySelector('.emoji.wave-hand');
 
   function waveOnLoad() {
@@ -61,6 +64,7 @@ $(function () {
     hand.classList.remove('wave');
   });
 
+  //amimacje elementow
   window.sr = ScrollReveal({
     reset: false,
     duration: 600,
@@ -75,3 +79,7 @@ $(function () {
   sr.reveal('.featured-projects', { viewFactor: 0.1 });
   sr.reveal('.other-projects', { viewFactor: 0.05 });
 });
+
+//bierzaca data na copyright
+const year = new Date().getFullYear();
+document.getElementById('year').textContent = year;
