@@ -687,6 +687,10 @@ strong {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.skillz__category {
+  margin: 0 10px 20px 10px;
+}
 @media screen and (max-width: 630px) {
   .skills .skillz {
     -ms-flex-wrap: wrap;
