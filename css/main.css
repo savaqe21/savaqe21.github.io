@@ -684,7 +684,7 @@ strong {
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
