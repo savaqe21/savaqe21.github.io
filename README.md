@@ -38,6 +38,16 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+Tailwind CSS: `npx astro add tailwind`
+Inter font: `npm install @fontsource-variable/inter` 
+Host Grotesk font: `npm install @fontsource-variable/host-grotesk`
+Astro-icon: `npx astro add astro-icon`
+Material Desing Icons: `npm install @iconify-json/mdi`
+
+https://docs.astro.build/en/guides/styling/#add-tailwind-4
+https://www.astroicon.dev
+https://icon-sets.iconify.design/mdi/?category=Material
+
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
