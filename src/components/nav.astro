@@ -1,0 +1,199 @@
+---
+import { Icon } from 'astro-icon/components';
+interface NavItem {
+  label: string;
+  href: string;
+  icon: string;
+}
+
+const navItems: NavItem[] = [
+  {
+    label: "Home",
+    href: "#home",
+    icon: `mdi:home`,
+  },
+  {
+    label: "Projects",
+    href: "#projects",
+    icon: `mdi:computer`,
+  },
+  {
+    label: "Contact",
+    href: "#contact",
+    icon: `mdi:message`,
+  },
+];
+---
+
+<div class="flex justify-center w-full">
+  <nav
+    id="main-nav"
+    class="fixed left-1/2 -translate-x-1/2 z-[100] bg-[var(--background)] border border-1 border-transparent backdrop-blur-xl transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0 w-[80%]"
+  >
+    <div class="container mx-auto flex justify-center items-center p-3">
+      <ul
+        class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-6"
+      >
+        {
+          navItems.map((item) => (
+            <li class="flex-1 md:flex-none">
+              <a
+                href={item.href}
+                class="flex flex-col items-center gap-1 text-[var(--gray)] transition-colors text-xs md:text-base relative group"
+              >
+                <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 scale-0 opacity-0 bg-[#A9FF5B] nav-indicator hidden md:block" />
+                <span class="md:hidden flex items-center justify-center w-6 h-6">
+                  <Icon 
+                    name={item.icon} 
+                    class="w-8 h-8 text-white group-hover:text-accent transition-colors duration-300" 
+                  />
+                </span>
+                <span class="hidden md:inline-block">{item.label}</span>
+                <span class="md:hidden">{item.label}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+</div>
+<style>
+  nav {
+    /* transform: translateX(-50%); */
+    background-color: rgba(255, 0, 0, 0);
+    transition:
+      background-color 0.3s ease,
+      border-radius 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+   nav.scrolling {
+    background-color: color-mix(in srgb, var(--color-background), transparent 20%);
+    border-color: #ffffff20;
+    
+    border-radius: 9999px;
+    backdrop-filter: blur(8px);
+  }
+
+  nav a.active .nav-indicator {
+    transform: translateY(-50%) scale(1);
+    opacity: 0;
+  }
+
+  nav a.active {
+    color: white !important;
+  }
+
+  @media (max-width: 767px) {
+    nav {
+      width: 100% !important;
+      /* transform: translateX(-50%); */
+      bottom: 0;
+      left: 50%;
+      position: fixed;
+      border-radius: 1rem 1rem 0 0;
+      border-color: #ffffff20;
+    }
+
+    nav.scrolling {
+      border-radius: 1rem 1rem 0 0;
+      background-color: var(--component-bg);
+    }
+
+    body {
+      padding-bottom: 70px;
+    }
+  }
+</style>
+
+<script>
+  //scroll morphing effect, changing width & border radius
+  const nav = document.getElementById("main-nav");
+  const maxScroll = 1000;
+  let rafId: number | null = null;
+
+  function updateNav() {
+    if (window.scrollY > 0) {
+      nav?.classList.add("scrolling");
+
+      const scrollProgress = Math.min(window.scrollY / maxScroll, 1);
+      const easeProgress = 1 - Math.pow(1 - scrollProgress, 4);
+
+      const minWidth = 528;
+      const maxWidth = window.innerWidth * 0.8;
+      const currentWidth = maxWidth - (maxWidth - minWidth) * easeProgress;
+
+      if (window.innerWidth >= 768) {
+        nav?.style.setProperty("width", `${currentWidth}px`);
+      }
+    } else {
+      nav?.classList.remove("scrolling");
+      nav?.style.setProperty("width", "80%");
+    }
+    rafId = null;
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateNav);
+      }
+    },
+    { passive: true }
+  );
+
+  //smooth scrolling to a linked section
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = e.currentTarget as HTMLAnchorElement;
+      const targetId = target.getAttribute("href")?.substring(1) || "";
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  //highlight section by observing visible one on the screen by 50%
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("nav a[href^='#']");
+    const observerOptions = { threshold: 0.5 };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => link.classList.remove("active"));
+          const id = entry.target.getAttribute("id");
+          const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+          if (activeLink) {
+            activeLink.classList.add("active");
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+    sections.forEach((section) => observer.observe(section));
+  });
+</script>
+
+<style>
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: 70px;
+    }
+  }
+
+  nav a.active {
+    color: white !important;
+  }
+</style>

@@ -1,0 +1,22 @@
+{
+  "name": "Akhunjee API",
+  "photoUrl": "/photo.jpg",
+  "intro": "Software Developer specializing in Flutter & Astro.",
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/nbakh16",
+      "icon": "mdi:github"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/nbakh16",
+      "icon": "mdi:linkedin"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:hello@akhunjee.com",
+      "icon": "mdi:email"
+    }
+  ]
+}
