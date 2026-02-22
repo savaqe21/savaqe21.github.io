@@ -23,7 +23,7 @@ const { title } = Astro.props;
   <body class="sm:px-28 lg:px-20 px-9 relative min-h-screen overflow-x-hidden">
     <div 
       id="matrix-container" 
-      class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none opacity-50"
+      class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"
       style="mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 95%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 95%);"
     ></div>
   
@@ -72,7 +72,7 @@ const { title } = Astro.props;
         
         const left = Math.random() * 100; 
         const duration = 4 + Math.random() * 8; // 4s to 10s
-        const size = 8 + Math.random() * 14; // 12px to 30px
+        const size = 10 + Math.random() * 10; // 10px to 20px
         
         span.innerText = char;
         span.className = 'falling-letter';

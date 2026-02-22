@@ -6,6 +6,7 @@
   --color-background: #1d1a3c;
   --color-container: #24243e;
   --color-line: #f3f3f310;
+  --color-gray: #ffffff90;
   
   /* Fonts */
   --font-heading: "Space Grotesk Variable", sans-serif;
@@ -40,14 +41,21 @@
 
   body {
     @apply font-body antialiased text-white;
-    background: linear-gradient(135deg, #1f1c2c 0%, #1d1a3c 50%, #24243e 100%);
+    background: linear-gradient(
+      135deg,    
+    #1f1c2c 0%,
+    #1d1a3c 50%,
+    #24243e 100%
+    );
     background-attachment: fixed;
+    min-height: 100vh;
   }
 }
 
 @layer components {
   .falling-letter {
-    @apply absolute font-extralight select-none pointer-events-none z-[-10] leading-none animate-fall;
+    @apply absolute font-heading font-extralight select-none pointer-events-none leading-none;
+    animation: fall linear forwards;
   }
   
   .launching {
