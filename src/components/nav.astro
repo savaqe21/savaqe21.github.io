@@ -139,16 +139,27 @@ const navItems: NavItem[] = [
       width: 100% !important;
     }
 
+    /* Hiding bottom bar while scroling on mobile */
     #main-nav {
-      /* Smooth transition for the sliding effect */
+      /* Force Hardware Acceleration (Fixes the white flash) */
+      will-change: transform;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      
+      /* Smooth transition */
       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
                   background-color 0.4s ease, 
                   backdrop-filter 0.4s ease;
+
+      /* Ensure no default background is fighting the blur */
+      background-clip: padding-box;
     }
 
-    /* This class will be toggled by JS */
     #main-nav.nav-hidden {
-      transform: translateY(100%) !important;
+      transform: translateY(110%) !important;
+      
+      /* Optional: Turn off blur when hidden to save GPU cycles */
+      backdrop-filter: blur(0px);
     }
   }
 
