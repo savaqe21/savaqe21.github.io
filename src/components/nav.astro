@@ -44,13 +44,13 @@ const navItems: NavItem[] = [
             <li class="flex-1 md:flex-none">
               <a
                 href={item.href}
-                class="flex flex-col items-center gap-1 text-gray transition-colors text-xs md:text-base relative group"
+                class="flex flex-col items-center gap-1 text-gray-400 transition-colors text-xs md:text-base relative group"
               >
                 <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 scale-0 opacity-0 bg-[#A9FF5B] nav-indicator hidden md:block" />
                 <span class="md:hidden flex items-center justify-center w-6 h-6">
                   <Icon 
                     name={item.icon} 
-                    class="w-8 h-8 text-white group-hover:text-accent transition-colors duration-300" 
+                    class="nav-icon w-8 h-8 text-gray-400 group-hover:text-accent transition-colors duration-300" 
                   />
                 </span>
                 <span class="hidden md:inline-block">{item.label}</span>
@@ -89,8 +89,39 @@ const navItems: NavItem[] = [
     opacity: 0;
   }
 
+  /* Base state for the link text */
+  nav a {
+    transition: transform 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+  }
+
+  /* Active state */
   nav a.active {
     color: white !important;
+    font-weight: 700;
+    transform: scale(1.1);
+  }
+
+  /* Glow effect */
+  nav a.active span {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Ensure the scale doesn't jitter the layout */
+  nav li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Icon style for mobile view */
+  .nav-icon {
+    transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
+  }
+
+  nav a.active .nav-icon {
+    color: var(--color-accent) !important;
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px var(--color-accent));
   }
 
   @media (max-width: 767px) {
@@ -107,6 +138,33 @@ const navItems: NavItem[] = [
       border-radius: 1.5rem 1.5rem 0 0;
       width: 100% !important;
     }
+
+    #main-nav {
+      /* Smooth transition for the sliding effect */
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                  background-color 0.4s ease, 
+                  backdrop-filter 0.4s ease;
+    }
+
+    /* This class will be toggled by JS */
+    #main-nav.nav-hidden {
+      transform: translateY(100%) !important;
+    }
+  }
+
+  /* Hover effect */
+  nav a:not(.active):hover {
+    color: var(--color-accent) !important;
+  }
+
+  nav a:not(.active):hover span {
+    transform: scale(0.95);
+    text-shadow: 0 0 15px var(--color-accent-60);
+  }
+  
+  nav a:not(.active):hover .nav-icon {
+    transform: scale(0.95);
+    color: var(--color-accent) !important;
   }
 </style>
 
@@ -114,10 +172,13 @@ const navItems: NavItem[] = [
   //scroll morphing effect, changing width & border radius
   const nav = document.getElementById("main-nav");
   const maxScroll = 1000;
+  let lastScrollY = window.scrollY;
   let rafId: number | null = null;
 
   function updateNav() {
-    if (window.scrollY > 0) {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 0) {
       nav?.classList.add("scrolling");
 
       const scrollProgress = Math.min(window.scrollY / maxScroll, 1);
@@ -132,8 +193,20 @@ const navItems: NavItem[] = [
       }
     } else {
       nav?.classList.remove("scrolling");
-      nav?.style.setProperty("width", "80%");
+      // nav?.style.setProperty("width", "80%");
     }
+    if (window.innerWidth < 768) {
+      // Small buffer (e.g. 10px) to prevent accidental hiding on "jittery" scrolls
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Scrolling Down - Hide Nav
+        nav?.classList.add("nav-hidden");
+      } else {
+        // Scrolling Up - Show Nav
+        nav?.classList.remove("nav-hidden");
+      }
+    }
+
+    lastScrollY = currentScrollY;
     rafId = null;
   }
 
