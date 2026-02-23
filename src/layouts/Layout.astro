@@ -68,7 +68,7 @@ const { title } = Astro.props;
         const span = document.createElement('span');
         const char = characters[Math.floor(Math.random() * characters.length)];
         // const color = colors[Math.floor(Math.random() * colors.length)];
-        const color = "#8f8f8f"
+        const color = "var(--color-darkgray)";
         
         const left = Math.random() * 100; 
         const duration = 4 + Math.random() * 8; // 4s to 10s
@@ -93,12 +93,40 @@ const { title } = Astro.props;
 
 
       if (window.innerWidth > 768) {
-        // Adjusted frequency: one letter every 150ms for a balanced look
-        setInterval(createLetter, 150);
+        // one letter every 250ms
+        setInterval(createLetter, 250);
       } else {
-        // Optional: On mobile, just create a few static letters 
-        // so it doesn't look empty, but don't animate them.
-        console.log("Matrix rain disabled for mobile performance.");
+        // Static scatter effect for mobile optimization
+        const mobileCount = 20; 
+        for (let i = 0; i < mobileCount; i++) {
+          createStaticLetter();
+        }
+      }
+
+      function createStaticLetter() {
+        if (!container) return;
+
+        const span = document.createElement('span');
+        const char = characters[Math.floor(Math.random() * characters.length)];
+        const color = "var(--color-darkgray)";
+        
+        const left = Math.random() * 100; 
+        const top = Math.random() * 90; // Random vertical position
+        const size = 10 + Math.random() * 10;
+        
+        span.innerText = char;
+        span.className = 'falling-letter'; // from global.css
+        
+        // Override animation for mobile 'none'
+        span.style.animation = 'none'; 
+        span.style.left = `${left}vw`;
+        span.style.top = `${top}vh`;
+        span.style.color = color;
+        span.style.fontSize = `${size}px`;
+        span.style.opacity = (0.1 + Math.random() * 0.3).toString();
+        span.style.textShadow = `0 0 5px ${color}`;
+        
+        container.appendChild(span);
       }
 
       
