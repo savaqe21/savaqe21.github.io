@@ -20,14 +20,16 @@ const { title } = Astro.props;
     <link rel="icon" type="image/png" href="/favicon.ico" />
     <title>{title}</title>
   </head>
-  <body class="sm:px-28 lg:px-20 px-9 relative min-h-screen overflow-x-hidden">
+  <body class="relative min-h-screen overflow-x-hidden antialiased">
     <div 
       id="matrix-container" 
       class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"
-      style="mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 95%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 95%);"
+      style="mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);"
     ></div>
-  
-    <slot />
+
+    <main class="px-2 sm:px-12 md:px-14 lg:px-28 max-w-360 mx-auto relative z-0">
+        <slot />
+    </main>
 
     <button
       id="to-top"
