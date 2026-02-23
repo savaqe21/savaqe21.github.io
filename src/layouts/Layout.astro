@@ -17,7 +17,7 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.ico" />
     <title>{title}</title>
   </head>
   <body class="sm:px-28 lg:px-20 px-9 relative min-h-screen overflow-x-hidden">
@@ -101,7 +101,8 @@ const { title } = Astro.props;
         console.log("Matrix rain disabled for mobile performance.");
       }
 
-      //Scroll to top
+      
+      // ** SCROLL TO TOP ** //
       const toTopBtn = document.getElementById('to-top');
       const progressCircle = document.getElementById('progress-circle');
       const circumference = 150.796; // 2 * pi * 24
@@ -111,13 +112,13 @@ const { title } = Astro.props;
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercentage = window.scrollY / scrollHeight;
         
-        // 1. Update the Circle Progress
+        // Update the Circle Progress
         const offset = circumference - (scrollPercentage * circumference);
         if (progressCircle) {
           progressCircle.style.strokeDashoffset = offset.toString();
         }
 
-        // 2. Visibility Logic (Appear at 50%)
+        // Visibility Logic (Appear at 50%)
         if (scrollPercentage > 0.5) {
           toTopBtn?.classList.remove('translate-y-20', 'opacity-0');
           toTopBtn?.classList.add('translate-y-0', 'opacity-100');
@@ -126,8 +127,7 @@ const { title } = Astro.props;
           toTopBtn?.classList.remove('translate-y-0', 'opacity-100');
         }
 
-        // 3. Bounce Logic (at 100%)
-        // We use 0.98 to account for browser rounding errors on some screens
+        // Bounce Logic at 98%
         if (scrollPercentage > 0.98) {
           arrowIcon?.classList.add('animate-bounce-twice');
         } else {
@@ -147,7 +147,7 @@ const { title } = Astro.props;
       const startPosition = window.scrollY;
       const duration = 750;
       let startTime: number | null = null;
-      let requestID: number; // We will store the ID here
+      let requestID: number; // storing the ID here
 
       const stopAnimation = () => {
         cancelAnimationFrame(requestID);

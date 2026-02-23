@@ -14,7 +14,7 @@
 
   /* Custom Animations */
   --animate-fall: fall linear forwards;
-  --animate-bounce-twice: double-bounce-pause 2.6s ease-in-out infinite;
+  --animate-bounce-twice: double-bounce-pause 5.6s ease-in-out infinite;
 
   @keyframes fall {
     0% { transform: translateY(-5vh); opacity: 0; }
@@ -24,8 +24,9 @@
   }
 
   @keyframes double-bounce-pause {
-    0%, 11.5%, 23%, 100% { transform: translateY(0); }
-    5.75%, 17.25% { transform: translateY(-8px); }
+    0%, 5.3%, 10.7%, 100% { transform: translateY(0); }
+    2.6% { transform: translateY(-8px); }
+    8% { transform: translateY(-8px); }
   }
 
   @keyframes launch {
@@ -61,4 +62,21 @@
   .launching {
     animation: launch 0.5s ease-in forwards;
   }
+}
+
+/* Custom Scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  /* @apply bg-gray; */
+  border-radius: 100px;
+  background-color: color-mix(in srgb, var(--color-background), white 20%);
+}
+::-webkit-scrollbar-thumb:hover {
+  /* @apply bg-gray-50; */
+  background-color: color-mix(in srgb, var(--color-background), white 40%);
 }
