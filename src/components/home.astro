@@ -43,6 +43,7 @@ const { name, photoUrl, intro, socials } = data;
       <img 
         src={photoUrl}
         alt={name}
+        onerror="this.onerror=null;this.src='/placeholder.jpeg';"
         class="w-full h-full object-cover scale-110" 
       />
     </div>
@@ -55,10 +56,11 @@ const { name, photoUrl, intro, socials } = data;
     </p>
   </div>
 
-  <div class="space-y-8 max-w-2xl">
+  <div class="px-2 sm:px-12 md:px-14 lg:px-28 max-w-360 mx-auto relative z-0">
     <h1 class="text-5xl md:text-7xl font-heading font-bold text-white tracking-tight">
       {name}
     </h1>
+    <br>
     <p class="text-xl md:text-2xl font-body text-gray leading-relaxed">
       {intro}
     </p>
