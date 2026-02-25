@@ -1,31 +1,39 @@
-# Astro Starter Kit: Minimal
+# 🚀 Personal Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A high-performance, responsive portfolio built with **Astro**, **Tailwind CSS**, and **Native Browser Animations**. This site features a data-driven architecture where projects, experience, and contact info are managed via JSON.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🛠️ Tech Stack
 
-## 🚀 Project Structure
+- **Frontend:** [Astro](https://astro.build/) (SSG)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Icons:** [Iconify](https://iconify.design/) via `astro-icon`
+- **Deployment:** [GitHub Pages](https://pages.github.com/)
+- **Backend (Planned):** [FastAPI](https://fastapi.tiangolo.com/)
 
-Inside of your Astro project, you'll see the following folders and files:
+## ✨ Features
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **Matrix Rain Hero:** A custom canvas-based background effect.
+- **Data-Driven:** All content is separated into `/src/data/*.json` for easy updates.
+- **Dynamic Projects:** Auto-sliding image gallery with crossfade transitions.
+- **Intersection Observer:** Smooth reveal animations as you scroll.
+- **Fully Responsive:** Optimized for mobile, tablet, and desktop.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🚀 Getting Started
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Follow these instructions to get a local copy up and running.
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Prerequisites
 
-## 🧞 Commands
+Make sure you have **Node.js** (v18.14.1 or higher) installed on your machine.
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/nbakh16/my-portfolio
+2. **Navigate to the project folder:**
+   ```bash
+   cd my-portfolio
 
 All commands are run from the root of the project, from a terminal:
 
@@ -54,6 +62,6 @@ https://www.astroicon.dev
 
 https://icon-sets.iconify.design/mdi/?category=Material
 
-## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📝 License
+[MIT License](LICENSE)
