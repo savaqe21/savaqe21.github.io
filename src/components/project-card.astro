@@ -14,7 +14,7 @@ const isSlider = project.images.length > 1;
         <img 
           src={img} 
           alt={`${project.title} screenshot ${index + 1}`}
-          onerror="this.onerror=null;this.src='/placeholder.jpeg';"
+          onerror="this.onerror=null;this.src='/public/placeholder.jpeg';"
           class={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 ${index === 0 ? 'opacity-100 z-0' : 'opacity-0 z-[-1]'}`}
         />
       ))}

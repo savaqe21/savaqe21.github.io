@@ -2,7 +2,7 @@
   {
     "title": "Movie Pop",
     "description": "A sleek, production-ready movie discovery app published on the Play Store, featuring dynamic API integration and UI animations.",
-    "images": ["/moviepop-1.webp"],
+    "images": ["/public/moviepop-1.webp"],
     "tech": ["Flutter", "Dart", "REST API"],
     "platforms": ["android", "apple-ios"],
     "link": "https://play.google.com/store/apps/details?id=com.nbakh.movie_pop",
@@ -11,7 +11,7 @@
   {
     "title": "Another FPS",
     "description": "Adrenaline-fueled FPS horde shooter—battle escalating monster waves, earn achievements, powered by Unreal Engine 5 for intense action.",
-    "images": ["/afps-1.webp", "/afps-2.webp", "/afps-3.webp", "/afps-4.webp"],
+    "images": ["/public/afps-1.webp", "/public/afps-2.webp", "/public/afps-3.webp", "/public/afps-4.webp"],
     "tech": ["Unreal Engine", "C++"],
     "platforms": ["windows"],
     "link": "https://drive.google.com/drive/folders/1PSfNdD0qV7iALrtGax4iF5cYSBMVveL_",
