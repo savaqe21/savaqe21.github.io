@@ -1,0 +1,76 @@
+---
+import { Icon } from 'astro-icon/components';
+import homeData from '../data/home.json';
+
+const getDisplayText = (name: string, url: string) => {
+  if (name.toLowerCase() === 'email') return url.replace('mailto:', '');
+  if (name.toLowerCase() === 'phone') return url;
+  return `${name} Profile`;
+};
+---
+
+<section id="contact" class="py-24 px-4 md:px-0">
+  <div class="container mx-auto max-w-6xl text-center">
+    <div class="contact-reveal opacity-0 space-y-12">
+      
+      <div class="space-y-4">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
+            Let's build <span class="text-accent">something</span> together.
+          </h2>
+          <p class="text-gray font-body text-lg leading-relaxed">
+            I'm currently looking for new opportunities in <span class="text-white">Software Engineering</span> and <span class="text-white">Data Analytics</span>. Whether you have a question or just want to say hi, my inbox is always open!
+          </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {homeData.socials.map((social) => (
+          <a 
+            href={social.url} 
+            target="_blank" 
+            class="group p-8 bg-white/5 border border-white/10 rounded-3xl hover:border-accent/40 hover:bg-accent/5 transition-all duration-300"
+          >
+            <Icon 
+              name={social.icon} 
+              class="w-10 h-10 text-accent mb-4 mx-auto group-hover:scale-110 transition-transform" 
+            />
+            <h3 class="text-white font-bold mb-1">{social.name}</h3>
+            <p class="text-gray-400 text-xs truncate px-2">
+              {social.url.replace('https://', '').replace('mailto:', '').replace('wa.me/', '+')}
+            </p>
+          </a>
+        ))}
+      </div>
+
+      <div class="pt-20 border-t border-white/5">
+        <p class="text-gray-600 text-sm font-body">
+          © {new Date().getFullYear()} • Designed & Built by {homeData.name}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-reveal {
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .contact-reveal.reveal {
+    opacity: 1 !important;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const revealContact = () => {
+    const section = document.querySelector('.contact-reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('reveal');
+      });
+    }, { threshold: 0.1 });
+    if (section) observer.observe(section);
+  }
+  revealContact();
+  document.addEventListener('astro:after-swap', revealContact);
+</script>
