@@ -16,5 +16,14 @@
     "platforms": ["windows"],
     "link": "https://drive.google.com/drive/folders/1PSfNdD0qV7iALrtGax4iF5cYSBMVveL_",
     "category": "Game Dev / Hobby"
+  },
+    {
+    "title": "Ball on Roll",
+    "description": "Roll into a fast-paced endless runner where you guide a ball through shifting obstacles, collect Orbs, chase high scores, and survive the thrill.",
+    "images": ["ball-on-roll.webp"],
+    "tech": ["Unity", "C#"],
+    "platforms": ["android"],
+    "link": "https://nbakh16.itch.io/ball-on-roll-android",
+    "category": "Game Dev / Hobby"
   }
 ]
