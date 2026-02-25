@@ -1,7 +1,7 @@
 {
   "name": "Nabil Akhunjee",
   "photoUrl": "https://avatars.githubusercontent.com/u/38786346?v=4",
-  "intro": "Software Engineer building real-world digital solutions using Flutter and FastAPI. My focus is on performance, user experience, and solving practical business problems.",
+  "intro": "I turn ideas into engaging, intuitive digital experiences that feel seamless from beginning to end. As a proactive team player, I’m driven by curiosity, continuous learning by solving problems—focused on delivering meaningful, high-impact results efficiently and effectively.",
   "socials": [
     {
       "name": "GitHub",
@@ -15,8 +15,13 @@
     },
     {
       "name": "Email",
-      "url": "mailto:hello@akhunjee.com",
+      "url": "mailto:nbakh16@gmail.com",
       "icon": "mdi:email"
+    },
+    {
+      "name": "Whatsapp",
+      "url": "https://wa.me/8801516503227",
+      "icon": "mdi:whatsapp"
     }
   ]
 }
