@@ -1,33 +1,34 @@
-# 🚀 Personal Portfolio
+# 🚀 DevPortfolio: Data-Driven Astro SSG
+Live Demo: https://nbakh16.github.io/my-portfolio/
 
-A high-performance, responsive portfolio built with **Astro**, **Tailwind CSS**, and **Native Browser Animations**. This site features a data-driven architecture where projects, experience, and contact info are managed via JSON.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Astro](https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=white)](https://astro.build/)
+
+A high-performance, responsive portfolio built with **Astro**, **Tailwind CSS**, and **Native Browser Animations**. Designed to be 100% data-driven and easily forkable.
+
+## 🌟 Highlights
+- **Zero-JS by Default:** Leveraging Astro's islands architecture.
+- **JSON-First:** Update your information in `src/data/` without touching any code.
+- **Fully Responsive:** Optimized for mobile, tablet, and desktop.
+- **Performance:** Optimized for perfect Lighthouse scores.
 
 ## 🛠️ Tech Stack
-
-- **Frontend:** [Astro](https://astro.build/) (SSG)
+- **Frontend:** [Astro](https://astro.build/) (Static Site Generation)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Icons:** [Iconify](https://iconify.design/) via `astro-icon`
 - **Deployment:** [GitHub Pages](https://pages.github.com/)
-- **Backend (Planned):** [FastAPI](https://fastapi.tiangolo.com/)
+- **Backend:** [FastAPI](https://fastapi.tiangolo.com/) (Not included, works without backend)
 
-## ✨ Features
-
-- **Matrix Rain Hero:** A custom canvas-based background effect.
-- **Data-Driven:** All content is separated into `/src/data/*.json` for easy updates.
-- **Dynamic Projects:** Auto-sliding image gallery with crossfade transitions.
-- **Intersection Observer:** Smooth reveal animations as you scroll.
-- **Fully Responsive:** Optimized for mobile, tablet, and desktop.
+## 🛠️ How to Customize
+To make this portfolio yours, simply edit the JSON files in `src/data/`.
 
 ## 🚀 Getting Started
-
 Follow these instructions to get a local copy up and running.
 
 ### Prerequisites
-
-Make sure you have **Node.js** (v18.14.1 or higher) installed on your machine.
+Make sure you have **Node.js** (v18.20.8 or higher) installed on your machine.
 
 ### Installation
-
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/nbakh16/my-portfolio
@@ -62,6 +63,15 @@ https://www.astroicon.dev
 
 https://icon-sets.iconify.design/mdi/?category=Material
 
+---
+## 🤝 Contributing
+Whether you're fixing a bug, adding a new feature, or improving the documentation, your help is welcome!
+1. **Fork** the Repo.
+2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`).
+3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`).
+4. **Push** to the branch (`git push origin feature/AmazingFeature`).
+5. **Open** a Pull Request.
+---
 
 ## 📝 License
 [MIT License](LICENSE)
