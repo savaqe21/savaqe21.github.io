@@ -21,6 +21,18 @@ A high-performance, responsive portfolio built with **Astro**, **Tailwind CSS**,
 
 ## 🛠️ How to Customize
 To make this portfolio yours, simply edit the JSON files in `src/data/`.
+```
+Directory Structure
+├── public/              # Static assets (placeholder.jpg, favicon)
+├── src/
+│   ├── components/      # Reusable Astro components
+│   ├── data/            # JSON files for project data
+│   ├── layouts/         # Layout templates with Meta tags
+│   ├── pages/           # Site routes (index.astro)
+│   └── styles/          # global css styles
+├── astro.config.mjs     # Astro configuration
+└── tsconfig.json        # Typescript configuration
+```
 
 ## 🚀 Getting Started
 Follow these instructions to get a local copy up and running.
