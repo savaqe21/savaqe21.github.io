@@ -1,12 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
-import homeData from '../data/home.json';
+import localData from '../data/home.json';
 
-const getDisplayText = (name: string, url: string) => {
-  if (name.toLowerCase() === 'email') return url.replace('mailto:', '');
-  if (name.toLowerCase() === 'phone') return url;
-  return `${name} Profile`;
-};
 ---
 
 <section id="contact" class="py-4 md:py-20 px-4 md:px-0">
@@ -23,7 +18,7 @@ const getDisplayText = (name: string, url: string) => {
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-        {homeData.socials.map((social) => (
+        {localData.socials.map((social) => (
           <a 
             href={social.url} 
             target="_blank" 
@@ -45,7 +40,7 @@ const getDisplayText = (name: string, url: string) => {
       <div class="pt-20 border-t border-white/5">
         <div class="flex flex-col md:flex-row justify-between items-center gap-4">
           <p class="text-gray-400 text-sm font-body order-2 md:order-1">
-            Nabil Akhunjee © 2026
+            {localData.name} © 2026
           </p>
           
           <div class="flex items-center gap-3 text-gray-400 text-xs font-body order-1 md:order-2">
@@ -55,10 +50,10 @@ const getDisplayText = (name: string, url: string) => {
                 <Icon name="skill-icons:astro" class="w-4 h-4 group-hover:drop-shadow-[0_0_5px_var(--color-accent)]" />
                 <span>Astro</span>
               </a>
-              <span class="text-gray-500">|</span>
+              <!-- <span class="text-gray-500">|</span>
               <a href="https://fastapi.tiangolo.com" target="_blank" class="hover:text-accent transition-colors flex items-center gap-1.5 group">
                 <Icon name="skill-icons:fastapi" class="w-4 h-4 group-hover:drop-shadow-[0_0_5px_var(--color-accent)]" />
-                <span>FastAPI</span>
+                <span>FastAPI</span> -->
               </a>
             </div>
           </div>

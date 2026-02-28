@@ -1,29 +1,20 @@
 [
   {
-    "title": "Movie Pop",
-    "description": "A sleek, production-ready movie discovery app published on the Play Store, featuring dynamic API integration and UI animations.",
-    "images": ["moviepop-1.webp"],
-    "tech": ["Flutter", "Dart", "REST API"],
-    "platforms": ["android", "apple-ios"],
-    "link": "https://play.google.com/store/apps/details?id=com.nbakh.movie_pop",
-    "category": "Published App"
+    "title": "Awesome Website",
+    "description": "A high-performance, SEO-optimized web application built with modern frameworks to showcase technical expertise.",
+    "images": ["astro-01.webp", "astro-02.jpeg"],
+    "tech": ["Astro", "Tailwind"],
+    "platforms": ["web"],
+    "link": "#",
+    "category": "Published Website"
   },
   {
-    "title": "Another FPS",
-    "description": "Adrenaline-fueled FPS horde shooter—battle escalating monster waves, earn achievements, powered by Unreal Engine 5 for intense action.",
-    "images": ["afps-1.webp", "afps-2.webp", "afps-3.webp", "afps-4.webp"],
-    "tech": ["Unreal Engine", "C++"],
-    "platforms": ["windows"],
-    "link": "https://drive.google.com/drive/folders/1PSfNdD0qV7iALrtGax4iF5cYSBMVveL_",
-    "category": "Game Dev / Hobby"
-  },
-    {
-    "title": "Ball on Roll",
-    "description": "Roll into a fast-paced endless runner where you guide a ball through shifting obstacles, collect Orbs, chase high scores, and survive the thrill.",
-    "images": ["ball-on-roll.webp"],
-    "tech": ["Unity", "C#"],
-    "platforms": ["android"],
-    "link": "https://nbakh16.itch.io/ball-on-roll-android",
-    "category": "Game Dev / Hobby"
+    "title": "Demo Mobile App",
+    "description": "A high-performance mobile application built with modern frameworks to showcase technical expertise.",
+    "images": ["astro-02.jpeg", "#"],
+    "tech": ["Flutter", "Dart", "REST API"],
+    "platforms": ["apple-ios", "android"],
+    "link": "#",
+    "category": "Hobby"
   }
 ]
