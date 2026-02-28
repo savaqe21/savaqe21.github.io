@@ -13,20 +13,20 @@ const navItems: NavItem[] = [
     icon: `mdi:home`,
   },
   {
-    label: "Tech",
-    href: "#tech",
-    icon: `mdi:code-tags`,
+    label: "Experience",
+    href: "#experience",
+    icon: `mdi:work`,
   },
   {
     label: "Projects",
     href: "#projects",
     icon: `mdi:computer`,
   },
-  // {
-  //   label: "Experience",
-  //   href: "#contact",
-  //   icon: `mdi:message`,
-  // },
+  {
+    label: "Tech",
+    href: "#tech",
+    icon: `mdi:code-tags`,
+  },
   // {
   //   label: "Education",
   //   href: "#contact",
@@ -205,7 +205,7 @@ const navItems: NavItem[] = [
       const scrollProgress = Math.min(window.scrollY / maxScroll, 1);
       const easeProgress = 1 - Math.pow(1 - scrollProgress, 4);
 
-      const minWidth = 528;
+      const minWidth = 620;
       const maxWidth = window.innerWidth * 0.8;
       const currentWidth = maxWidth - (maxWidth - minWidth) * easeProgress;
 
