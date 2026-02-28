@@ -75,15 +75,6 @@ https://www.astroicon.dev
 
 https://icon-sets.iconify.design/mdi/?category=Material
 
----
-## 🤝 Contributing
-Whether you're fixing a bug, adding a new feature, or improving the documentation, your help is welcome!
-1. **Fork** the Repo.
-2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`).
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`).
-4. **Push** to the branch (`git push origin feature/AmazingFeature`).
-5. **Open** a Pull Request.
----
 
 ## 📝 License
 [MIT License](LICENSE)
