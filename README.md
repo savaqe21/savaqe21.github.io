@@ -1,5 +1,5 @@
 # 🚀 DevPortfolio: Data-Driven Astro SSG
-Live Demo: https://nbakh16.github.io/my-portfolio/
+Live Demo: my-portfolio-astro.netlify.app
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Astro](https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=white)](https://astro.build/)
