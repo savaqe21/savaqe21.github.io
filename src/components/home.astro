@@ -13,6 +13,7 @@ interface ProfileData {
   name: string;
   photoUrl: string;
   intro: string;
+  introHtml: string;
   resumeUrl: string;
   socials: Social[];
 }
@@ -35,39 +36,40 @@ if (isApiLive && BASE_URL) {
   data = localData as ProfileData;
 }
 
-const { name, photoUrl, intro, resumeUrl, socials } = data;
+const { name, photoUrl, intro, introHtml, resumeUrl, socials } = data;
 ---
 
-<section class="flex flex-col items-center justify-center pt-30 pb-20 gap-1 min-h-[80vh] text-center" id="home">
-  <div class="relative group mb-2">
+<section id="home" class="flex flex-col items-center justify-center pt-10 pb-10 md:pt-30 md:pb-25 gap-1 min-h-[80vh] text-center" >
+  <div class="relative group mb-2 reveal-content" style="animation-delay: 100ms;">
     <div class="balloon-float w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-accent overflow-hidden shadow-[0_0_50px_rgba(164,118,255,0.2)]">
       <img 
         src={photoUrl}
         alt={name}
-        onerror="this.onerror=null;this.src='placeholder.jpeg';"
+        onerror="this.onerror=null;this.src='/placeholder.jpeg';"
         class="w-full h-full object-cover scale-110" 
       />
     </div>
     <div class="balloon-float absolute -z-10 top-0 left-0 w-full h-full bg-accent rounded-full blur-[80px] opacity-20"></div>
   </div>
 
-    <div>
+    <div class="reveal-content" style="animation-delay: 200ms;">
     <p class="font-body font-light text-gray leading-relaxed">
       Hello, I'm
     </p>
   </div>
 
-  <div class="px-6 sm:px-14 md:px-18 lg:px-40 max-w-360 mx-auto relative z-0">
+  <div class="px-6 sm:px-14 md:px-18 lg:px-40 max-w-360 mx-auto relative z-0 reveal-content" style="animation-delay: 300ms;">
     <h1 class="text-5xl md:text-7xl font-heading font-bold text-white tracking-tight">
       {name}
     </h1>
     <br>
-    <p class="text-xl md:text-2xl font-body text-gray leading-relaxed">
-      {intro}
-    </p>
+    <p 
+      class="text-gray font-body text-lg leading-relaxed" 
+      set:html={introHtml} 
+    />
   </div>
 
-  <div class="mt-8 mb-4">
+  <div class="mt-8 mb-4 reveal-content" style="animation-delay: 400ms;">
     <a 
       href={resumeUrl} 
       target="_blank" 
@@ -83,7 +85,7 @@ const { name, photoUrl, intro, resumeUrl, socials } = data;
     >
       <div class="flex flex-col items-center justify-center text-center">
         <span class="tracking-wide text-sm md:text-base font-medium transition-transform duration-300 md:translate-y-2 md:group-hover:translate-y-0">
-          Resume
+          View Resume
         </span>
         
         <span class="text-[10px] text-gray-400 font-light whitespace-nowrap transition-all duration-300 
@@ -91,7 +93,7 @@ const { name, photoUrl, intro, resumeUrl, socials } = data;
                      opacity-100 translate-y-0 
                      /* Desktop: Hidden until hover */
                      md:opacity-0 md:translate-y-1 md:group-hover:opacity-100 md:group-hover:translate-y-0">
-          Downloads PDF file
+          Opens in Google Docs
         </span>
       </div>
       
@@ -99,7 +101,7 @@ const { name, photoUrl, intro, resumeUrl, socials } = data;
     </a>
 </div>
 
-  <div class="flex gap-6 mt-4">
+  <div class="flex gap-6 mt-4 reveal-content" style="animation-delay: 500ms;">
     {socials.map((social) => (
       <a 
         href={social.url} 
@@ -121,6 +123,19 @@ const { name, photoUrl, intro, resumeUrl, socials } = data;
 
 
 <style is:global>
+  .reveal-content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  @keyframes revealIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
   /* profile photo floating animation */
 
   /* When combined, the animation rule automatically merges these transforms */
@@ -151,3 +166,34 @@ const { name, photoUrl, intro, resumeUrl, socials } = data;
     }
   }
 </style>
+
+<script>
+  function revealSkills() {
+    const cards = document.querySelectorAll('.skill-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add a slight delay based on the card's position to create a wave effect
+          const index = Array.from(cards).indexOf(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('reveal');
+          }, (index % 6) * 50); // Delay resets every row for a clean staggered look
+          
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1, // Trigger when 10% of the card is visible
+      rootMargin: '0px 0px -50px 0px' // Trigger slightly before it hits the viewport
+    });
+
+    cards.forEach(card => observer.observe(card));
+  }
+
+  // Runs on initial load
+  revealSkills();
+  
+  // Necessary for Astro View Transitions if you use them
+  document.addEventListener('astro:after-swap', revealSkills);
+</script>
