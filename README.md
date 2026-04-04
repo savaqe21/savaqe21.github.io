@@ -1,10 +1,10 @@
-# 🚀 DevPortfolio: Data-Driven Astro SSG
-Live Demo: https://my-portfolio-astro.netlify.app
+# CareerPortfolio: Data-Driven Astro SSG
+Live Demo: [careerportofio.netlify.app](https://careerportofio.netlify.app)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Astro](https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=white)](https://astro.build/)
 
-A high-performance, responsive portfolio built with **Astro**, **Tailwind CSS**, and **Native Browser Animations**. Designed to be 100% data-driven and easily forkable.
+A high-performance, responsive portfolio built with **Astro**, **Tailwind CSS**, and **Native Browser Animations**. Designed to be 100% data-driven and easy to customize as a reusable template.
 
 ## 🌟 Highlights
 - **Zero-JS by Default:** Leveraging Astro's islands architecture.
@@ -16,8 +16,25 @@ A high-performance, responsive portfolio built with **Astro**, **Tailwind CSS**,
 - **Frontend:** [Astro](https://astro.build/) (Static Site Generation)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Icons:** [Iconify](https://iconify.design/) via `astro-icon`
-- **Deployment:** [GitHub Pages](https://pages.github.com/)
+- **Deployment:** [Netlify](https://www.netlify.com)
 - **Backend:** [FastAPI](https://fastapi.tiangolo.com/) (Not included, works without backend)
+
+## 🚀 Getting Started
+Follow these instructions to get a local copy up and running.
+
+### Prerequisites
+Make sure you have **Astro v6** and **Node.js** (v22.12.0 or higher) installed on your machine.
+
+### Installation
+1. Click **Use this template** on this repository.
+2. Choose **Create a new repository**.
+3. Clone your new repository: `git clone <your-repo-url>`
+4. Navigate to your repo: `cd <your-repo-name>`
+5. Install dependencies: `npm install`
+6. Start development server: `npm run dev`
+7. Update your content in `/src/data/`
+8. Build and deploy on your preferred platform
+
 
 ## 🛠️ How to Customize
 To make this portfolio yours, simply edit the JSON files in `src/data/`.
@@ -34,21 +51,7 @@ Directory Structure
 └── tsconfig.json        # Typescript configuration
 ```
 
-## 🚀 Getting Started
-Follow these instructions to get a local copy up and running.
-
-### Prerequisites
-Make sure you have **Node.js** (v18.20.8 or higher) installed on your machine.
-
-### Installation
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/nbakh16/my-portfolio
-2. **Navigate to the project folder:**
-   ```bash
-   cd my-portfolio
-
-All commands are run from the root of the project, from a terminal:
+#### Useful commands and links for reference:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
