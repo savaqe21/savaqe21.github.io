@@ -45,7 +45,7 @@ const navItems: NavItem[] = [
     id="main-nav"
     class="fixed left-1/2 -translate-x-1/2 z-20 border-[1.2px] border-transparent transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0 w-[80%]"
   >
-    <div class="container mx-auto flex justify-center items-center p-3">
+    <div class="container mx-auto flex justify-center items-center p-3 reveal-content" style="animation-delay: 700ms;">
       <ul
         class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-1"
       >
@@ -74,6 +74,19 @@ const navItems: NavItem[] = [
   </nav>
 </div>
 <style>
+    /* Reveal whole section when website loads */
+  .reveal-content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  @keyframes revealIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   nav {
     background-color: transparent;
     border-color: transparent;
