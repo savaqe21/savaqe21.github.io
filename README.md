@@ -1,8 +1,9 @@
 # CareerPortfolio: Data-Driven Astro SSG
 Live Demo: [careerportofio.netlify.app](https://careerportofio.netlify.app)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Astro](https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=white)](https://astro.build/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Contributions Welcome](https://img.shields.io/badge/🤝_Contributions-Welcome-blue)](CONTRIBUTING.md)
 
 A high-performance, responsive portfolio built with **Astro**, **Tailwind CSS**, and **Native Browser Animations**. Designed to be 100% data-driven and easy to customize as a reusable template.
 
@@ -78,6 +79,9 @@ https://www.astroicon.dev
 
 https://icon-sets.iconify.design/mdi/?category=Material
 
+## 🤝 Contributing
+Contributions are welcome!  
+Please read the [Contributing Guide](CONTRIBUTING.md) before opening a PR.
 
 ## 📝 License
-[MIT License](LICENSE)
+This project is licensed under the [MIT License](LICENSE)
