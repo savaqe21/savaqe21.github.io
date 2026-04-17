@@ -5,7 +5,7 @@ import projectsData from '../data/projects.json';
 
 <section id="projects" class="section-container overflow-hidden">
   <div class="container mx-auto">
-    <div class="mb-16">
+    <div class="mb-16 project-header">
       <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-2 flex items-center gap-4">
           <span class="text-accent">/</span> Featured Projects
         </h2>
@@ -22,50 +22,72 @@ import projectsData from '../data/projects.json';
   </div>
 </section>
 
-<script>
-  const initProjectReveal = () => {
-    const cards = document.querySelectorAll('.project-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        // Only trigger if the card is 15% visible
-        if (entry.isIntersecting) {
-          const card = entry.target as HTMLElement;
-          const index = Array.from(cards).indexOf(card);
-          
-          // Stagger effect based on row position
-          setTimeout(() => {
-            card.classList.add('reveal');
-          }, (index % 3) * 150);
-          
-          observer.unobserve(card);
-        }
-      });
-    }, { 
-      threshold: 0.15, // 15%
-      rootMargin: '0px 0px -10px 0px' // Negative margin, it must be inside the view
-    });
-
-    cards.forEach(card => observer.observe(card));
-  };
-
-  // Run only after everything (images, styles) is loaded
-  window.addEventListener('load', initProjectReveal);
-  
-  // Support for Astro View Transitions
-  document.addEventListener('astro:after-swap', initProjectReveal);
-</script>
 
 <style>
-  /* Initial state of the card */
+  /* Header Initial State */
+  .project-header {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Cards Initial State */
   .project-card {
+    opacity: 0; /* Ensuring cards start hidden too */
     transform: translateY(20px) scale(0.95);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Revealed state */
+  /* Shared Revealed State */
+  .project-header.reveal,
   .project-card.reveal {
     opacity: 1 !important;
     transform: translateY(0) scale(1);
   }
 </style>
+
+<script>
+  const initProjectReveal = () => {
+    const header = document.querySelector('.project-header');
+    const cards = document.querySelectorAll('.project-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const target = entry.target as HTMLElement;
+          
+          // Check if the intersecting element is the header
+          if (target.classList.contains('project-header')) {
+            target.classList.add('reveal');
+            observer.unobserve(target);
+          } 
+          // Check if the intersecting element is a project card
+          else if (target.classList.contains('project-card')) {
+            const index = Array.from(cards).indexOf(target);
+            
+            // Stagger effect based on row position (only for cards)
+            setTimeout(() => {
+              target.classList.add('reveal');
+            }, (index % 3) * 150);
+            
+            observer.unobserve(target);
+          }
+        }
+      });
+    }, { 
+      threshold: 0.15, 
+      rootMargin: '0px 0px -10px 0px' 
+    });
+
+    // Observe the header
+    if (header) observer.observe(header);
+    
+    // Observe all cards
+    cards.forEach(card => observer.observe(card));
+  };
+
+  window.addEventListener('load', initProjectReveal);
+
+  // Support for Astro View Transitions
+  document.addEventListener('astro:after-swap', initProjectReveal);
+</script>
