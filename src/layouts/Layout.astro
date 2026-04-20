@@ -33,11 +33,11 @@ const { title } = Astro.props;
 
     <button
       id="to-top"
-      class="fixed bottom-8 right-8 z-50 p-0 rounded-full bg-background border border-white/10 shadow-2xl transition-all duration-500 translate-y-20 opacity-0 group flex items-center justify-center cursor-pointer"
+      class="fixed bottom-8 right-8 z-50 p-0 rounded-full bg-background border border-accent/10 shadow-2xl transition-all duration-500 translate-y-20 opacity-0 group flex items-center justify-center cursor-pointer"
       aria-label="Back to top"
     >
       <svg class="w-14 h-14 -rotate-90">
-        <circle cx="28" cy="28" r="24" fill="none" stroke="currentColor" stroke-width="3" class="text-white/5"></circle>
+        <circle cx="28" cy="28" r="24" fill="none" stroke="currentColor" stroke-width="3" class="text-accent/5"></circle>
         <circle
           id="progress-circle"
           cx="28" cy="28" r="24"
@@ -70,7 +70,7 @@ const { title } = Astro.props;
         const span = document.createElement('span');
         const char = characters[Math.floor(Math.random() * characters.length)];
         // const color = colors[Math.floor(Math.random() * colors.length)];
-        const color = "var(--color-darkgray)";
+        const color = "var(--color-textrain)";
         
         const left = Math.random() * 100; 
         const duration = 4 + Math.random() * 8; // 4s to 10s
@@ -110,7 +110,7 @@ const { title } = Astro.props;
 
         const span = document.createElement('span');
         const char = characters[Math.floor(Math.random() * characters.length)];
-        const color = "var(--color-darkgray)";
+        const color = "var(--color-textrain)";
         
         const left = Math.random() * 100; 
         const top = Math.random() * 90; // Random vertical position

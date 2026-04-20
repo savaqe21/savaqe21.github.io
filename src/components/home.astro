@@ -59,13 +59,13 @@ const { name, photoUrl, intro, introHtml, resumeUrl, socials } = data;
   </div>
 
   <div class="px-6 sm:px-14 md:px-18 lg:px-40 max-w-360 mx-auto relative z-0 reveal-content" style="animation-delay: 300ms;">
-    <h1 class="text-5xl md:text-7xl font-heading font-bold text-white tracking-tight">
+    <h1 class="text-5xl md:text-7xl font-heading font-bold text-maintext tracking-tight">
       {name}
     </h1>
     <br>
     <p 
       class="text-gray font-body text-lg leading-relaxed" 
-      set:html={introHtml} 
+      set:html={intro} 
     />
   </div>
 
@@ -74,13 +74,13 @@ const { name, photoUrl, intro, introHtml, resumeUrl, socials } = data;
       href={resumeUrl} 
       target="_blank" 
       rel="noopener noreferrer"
-      class="group relative inline-flex items-center justify-center px-10 py-2 bg-white/5 border border-white/10 rounded-full text-white font-body transition-all duration-300
+      class="group relative inline-flex items-center justify-center px-10 py-2 bg-white/5 border border-white/10 rounded-full text-maintext font-body transition-all duration-300
 
              <!-- /* Mobile: Always active */ -->
              border-accent/50 bg-accent/10 shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)]
              
              <!-- /* Desktop: Reset and hover */ -->
-             md:border-white/10 md:bg-white/5 md:shadow-none md:hover:border-accent/50 md:hover:bg-accent/10 md:hover:shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)] 
+             md:border-accent/50 md:bg-accent/10 md:shadow-none md:hover:border-accent/50 md:hover:bg-accent/10 md:hover:shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)] 
              hover:scale-105"
     >
       <div class="flex flex-col items-center justify-center text-center">
@@ -88,7 +88,7 @@ const { name, photoUrl, intro, introHtml, resumeUrl, socials } = data;
           View Resume
         </span>
         
-        <span class="text-[10px] text-gray-400 font-light whitespace-nowrap transition-all duration-300 
+        <span class="text-[10px] text-subtext font-light whitespace-nowrap transition-all duration-300 
                      /* Mobile: Always visible */
                      opacity-100 translate-y-0 
                      /* Desktop: Hidden until hover */
@@ -110,7 +110,7 @@ const { name, photoUrl, intro, introHtml, resumeUrl, socials } = data;
       >
         <Icon 
         name={social.icon} 
-        class="w-8 h-8 text-white group-hover:text-accent transition-colors duration-300" 
+        class="w-8 h-8 text-maintext group-hover:text-accent transition-colors duration-300" 
       />
 
       <span class="absolute -bottom-6 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 text-xs text-accent font-body">

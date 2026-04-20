@@ -8,10 +8,10 @@ import localData from '../data/home.json';
   <div class="container mx-auto">
     <div class="space-y-12">
       <div class="contact-header opacity-0 mb-16">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-2 flex items-center gap-4">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-maintext mb-2 flex items-center gap-4">
             <span class="text-accent">/</span> Contact Me
           </h2>
-        <p class="text-gray font-body text-sm max-w-md">
+        <p class="text-subtext font-body text-sm max-w-md">
           Feel free to reach out. I'm always open to discussing new projects and opportunities.
         </p>
       </div>
@@ -22,14 +22,14 @@ import localData from '../data/home.json';
           <a 
             href={social.url} 
             target="_blank" 
-            class="contact-card opacity-0 group p-8 bg-white/5 border border-white/10 rounded-3xl hover:border-accent/40 hover:bg-accent/5 transition-all duration-300"
+            class="contact-card opacity-0 group p-8 bg-accent/5 border border-accent/10 rounded-2xl hover:border-accent/40 hover:bg-accent/10 transition-all duration-300"
           >
             <Icon 
               name={social.icon} 
               class="w-10 h-10 text-accent mb-4 mx-auto group-hover:scale-110 transition-transform" 
             />
-            <h3 class="text-white font-bold mb-1">{social.name}</h3>
-            <p class="text-gray-400 text-xs truncate px-2">
+            <h3 class="text-maintext font-bold mb-1">{social.name}</h3>
+            <p class="text-subtext text-xs truncate px-2">
               {social.url.replace('https://', '').replace('mailto:', '').replace('wa.me/', '+')}
             </p>
           </a>
@@ -39,19 +39,19 @@ import localData from '../data/home.json';
       <!-- /* FOOTER */ -->
       <div class="contact-footer opacity-0 pt-20 border-t border-white/5">
         <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="text-gray-400 text-sm font-body order-2 md:order-1">
+          <p class="text-subtext text-sm font-body order-2 md:order-1">
             {localData.name} © 2026
           </p>
-          <div class="flex items-center flex-wrap justify-center gap-3 text-gray-400 text-xs font-body order-1 md:order-2">
+          <div class="flex items-center flex-wrap justify-center gap-3 text-subtext text-xs font-body order-1 md:order-2">
             <span>Built using </span>
             <a 
               href="https://astro.build/themes/details/career-portfolio-data-driven-astro-ssg/" 
               target="_blank" 
-              class="text-white hover:text-accent transition-colors underline decoration-white/30 underline-offset-4 hover:decoration-accent"
+              class="text-maintext hover:text-accent transition-colors underline decoration-white/30 underline-offset-4 hover:decoration-accent"
             >
               Career Portfolio Theme
             </a>
-            <span class="text-gray-500 hidden sm:inline">•</span>
+            <span class="text-subtext hidden sm:inline">•</span>
             <div class="flex gap-4">
               <a href="https://astro.build" target="_blank" class="hover:text-accent transition-colors flex items-center gap-1.5 group">
                 <Icon name="skill-icons:astro" class="w-4 h-4 group-hover:drop-shadow-[0_0_5px_var(--color-accent)]" />

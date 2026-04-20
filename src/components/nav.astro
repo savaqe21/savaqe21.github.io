@@ -54,13 +54,13 @@ const navItems: NavItem[] = [
             <li class="flex-1 md:flex-none">
               <a
                 href={item.href}
-                class="flex flex-col items-center gap-1 text-gray-400 transition-colors text-xs md:text-base relative group"
+                class="flex flex-col items-center gap-1 text-accent transition-colors text-xs md:text-base relative group"
               >
                 <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 scale-0 opacity-0 nav-indicator hidden md:block" />
                 <span class="md:hidden flex items-center justify-center w-6 h-6">
                   <Icon 
                     name={item.icon} 
-                    class="nav-icon w-full h-full text-gray-400 group-hover:text-accent transition-colors duration-300" 
+                    class="nav-icon w-full h-full text-accent/50 group-hover:text-accent transition-colors duration-300" 
                   />
                 </span>
                 <span class="hidden md:inline-block">{item.label}</span>
@@ -101,7 +101,7 @@ const navItems: NavItem[] = [
 
    nav.scrolling {
     background-color: color-mix(in srgb, var(--color-background), transparent 75%);
-    border-color: #ffffff20;
+    border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
     
     border-radius: 9999px;
     backdrop-filter: blur(10px);
@@ -119,14 +119,14 @@ const navItems: NavItem[] = [
 
   /* Active state */
   nav a.active {
-    color: white !important;
+    color: var(--color-maintext) !important;
     font-weight: 700;
     transform: scale(1.1);
   }
 
   /* Glow effect */
   nav a.active span {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 10px color-mix(in srgb, var(--color-maintext) 30%, transparent);
   }
 
   /* Ensure the scale doesn't jitter the layout */
@@ -142,9 +142,9 @@ const navItems: NavItem[] = [
   }
 
   nav a.active .nav-icon {
-    color: var(--color-accent) !important;
+    color: var(--color-maintext) !important;
     transform: scale(1.2);
-    filter: drop-shadow(0 0 8px var(--color-accent));
+    filter: drop-shadow(0 0 8px var(--color-maintext));
   }
 
   @media (max-width: 767px) {
@@ -154,7 +154,7 @@ const navItems: NavItem[] = [
       border-radius: 1.5rem 1.5rem 0 0;
       background-color: color-mix(in srgb, var(--color-background), transparent 10%);
       backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      border-top: 1px solid color-mix(in srgb, var(--color-maintext) 15%, transparent);
     }
 
     nav.scrolling {
@@ -188,7 +188,7 @@ const navItems: NavItem[] = [
 
   /* Hover effect */
   nav a:not(.active):hover {
-    color: var(--color-accent) !important;
+    color: var(--color-maintext) !important;
   }
 
   nav a:not(.active):hover span {
@@ -198,7 +198,13 @@ const navItems: NavItem[] = [
   
   nav a:not(.active):hover .nav-icon {
     transform: scale(0.95);
-    color: var(--color-accent) !important;
+    color: var(--color-maintext) !important;
+  }
+
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: 70px;
+    }
   }
 </style>
 
@@ -296,14 +302,3 @@ const navItems: NavItem[] = [
   });
 </script>
 
-<style>
-  @media (max-width: 767px) {
-    body {
-      padding-bottom: 70px;
-    }
-  }
-
-  nav a.active {
-    color: white !important;
-  }
-</style>
