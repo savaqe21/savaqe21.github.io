@@ -1,0 +1,43 @@
+---
+interface Props {
+  item: {
+    period: string;
+    role: string;
+    company: string;
+    description: string;
+    skills: string[];
+  };
+  variant: 'mobile' | 'desktop-left' | 'desktop-right';
+}
+
+const { item, variant } = Astro.props;
+
+const isMobile = variant === 'mobile';
+const isLeft = variant === 'desktop-left';
+
+// Dynamic classes based on variant
+const cardClasses = isMobile 
+  ? "bg-accent/5 border border-accent/10 p-4 rounded-2xl" 
+  : "bg-accent/5 border border-accent/10 p-6 rounded-2xl hover:border-accent/40 transition-all group";
+
+const alignmentClass = isLeft ? "text-right" : "";
+
+
+const skillClasses = isMobile
+  ? "px-2 py-1 bg-accent/5 border border-accent/10 text-accent/80"
+  : "px-3 py-1 bg-accent/5 border border-accent/10 text-accent/80 group-hover:border-accent/40 group-hover:text-accent";
+
+const skillContainerClasses = `flex flex-wrap gap-2 ${isLeft ? 'justify-end' : ''}`;
+---
+
+<div class={`scroll-stat ${cardClasses} ${alignmentClass}`}>
+  <span class={`font-mono text-xs tracking-widest uppercase text-accent/75`}>{item.period}</span>
+  <h3 class="text-xl font-heading font-bold text-maintext mt-1">{item.role}</h3>
+  <p class="text-accent text-sm mb-4">{item.company}</p>
+  <p class="text-subtext font-body text-sm leading-relaxed mb-4">{item.description}</p>
+  <div class={skillContainerClasses}>
+    {item.skills.map((skill: string) => (
+      <span class={`rounded-full text-[10px] ${skillClasses}`}>{skill}</span>
+    ))}
+  </div>
+</div>
