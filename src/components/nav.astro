@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import ThemeToggle from './theme-toggle.astro';
 interface NavItem {
   label: string;
   href: string;
@@ -39,6 +40,9 @@ const navItems: NavItem[] = [
   }
 ];
 ---
+<div id="theme-toggle-wrapper" class="fixed top-4 right-4 z-50 md:top-4 md:right-4 reveal-content" style="animation-delay: 700ms;">
+  <ThemeToggle />
+</div>
 
 <div class="flex justify-center w-full">
   <nav
@@ -73,6 +77,7 @@ const navItems: NavItem[] = [
     </div>
   </nav>
 </div>
+
 <style>
     /* Reveal whole section when website loads */
   .reveal-content {
@@ -184,6 +189,16 @@ const navItems: NavItem[] = [
       /* Optional: Turn off blur when hidden to save GPU cycles */
       backdrop-filter: blur(0px);
     }
+
+    /* Hiding theme-toggle while scroling on mobile */
+    #theme-toggle-wrapper {
+      will-change: transform;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    /* Slide the button UP out of view */
+    #theme-toggle-wrapper.theme-hidden {
+      transform: translateY(-150%) !important;
+    }
   }
 
   /* Hover effect */
@@ -211,6 +226,8 @@ const navItems: NavItem[] = [
 <script>
   //scroll morphing effect, changing width & border radius
   const nav = document.getElementById("main-nav");
+  const themeWrapper = document.getElementById("theme-toggle-wrapper");
+
   const maxScroll = 1000;
   let lastScrollY = window.scrollY;
   let rafId: number | null = null;
@@ -238,11 +255,13 @@ const navItems: NavItem[] = [
     if (window.innerWidth < 768) {
       // Small buffer (e.g. 10px) to prevent accidental hiding on "jittery" scrolls
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling Down - Hide Nav
+        // Scrolling Down - Hide Nav & theme-toggle
         nav?.classList.add("nav-hidden");
+        themeWrapper?.classList.add("theme-hidden");
       } else {
-        // Scrolling Up - Show Nav
+        // Scrolling Up - Show Nav & theme-toggle
         nav?.classList.remove("nav-hidden");
+        themeWrapper?.classList.remove("theme-hidden");
       }
     }
 

@@ -6,21 +6,36 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+
+// ----- THEME VARIABLE -----
+// FEEL FREE TO CHANGE THIS TO ONE OF THE OPTIONS
+// Options: 'default', 'strategic', 'innovator', 'executive'
+const baseTheme = 'default'; 
+
+const defaultTheme = `${baseTheme}-dark`;
 ---
 
 <!doctype html>
-<!-- Available themes: 
-    default-dark, default-light,
-    strategic-dark, strategic-light, 
-    innovator-dark, innovator-light,
-    executive-dark, executive-light,
--->
-<html lang="en" data-theme="default-dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.ico" />
     <title>{title}</title>
+
+    <!-- THEME TOGGLE SCRIPT -->
+    <script is:inline define:vars={{ baseTheme, defaultTheme }}>
+      const savedTheme = localStorage.getItem('theme');
+
+      if (savedTheme && savedTheme.startsWith(baseTheme)) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        document.documentElement.setAttribute('data-theme', defaultTheme);
+        localStorage.setItem('theme', defaultTheme);
+      }
+    </script>
+
   </head>
   <body class="bg-container relative min-h-screen overflow-x-hidden antialiased">
     <div 
