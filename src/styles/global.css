@@ -130,11 +130,6 @@
     /*Transition for theme switching*/
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
   }
-
-
-  h1, h2, h3, h4, p, span, a, div, section, header, footer, button, svg {
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, stroke 0.5s ease-in-out;
-  }
 }
 
 @layer components {
