@@ -17,6 +17,16 @@
       "icon": "mdi:linkedin"
     },
     {
+      "name": "Leetcode",
+      "url": "#",
+      "icon": "devicon-plain:leetcode"
+    },
+    {
+      "name": "Behance",
+      "url": "#",
+      "icon": "devicon-plain:behance"
+    },
+    {
       "name": "Email",
       "url": "mailto:your-mail@example.com",
       "icon": "mdi:email"
@@ -25,6 +35,26 @@
       "name": "Whatsapp",
       "url": "https://wa.me/[YOUR_WHATSAPP_NUMBER]",
       "icon": "mdi:whatsapp"
+    },
+    {
+      "name": "Facebook",
+      "url": "#",
+      "icon": "mdi:facebook"
+    },
+    {
+      "name": "Messenger",
+      "url": "#",
+      "icon": "mdi:facebook-messenger"
+    },
+    {
+      "name": "Instagram",
+      "url": "#",
+      "icon": "mdi:instagram"
+    },
+    {
+      "name": "Twitter",
+      "url": "#",
+      "icon": "mdi:twitter"
     }
   ]
 }

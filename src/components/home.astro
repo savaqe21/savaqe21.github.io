@@ -102,7 +102,7 @@ const { name, photoUrl, intro, introHtml, resumeUrl, socials } = data;
 </div>
 
   <div class="flex gap-6 mt-4 reveal-content" style="animation-delay: 500ms;">
-    {socials.map((social) => (
+    {socials.filter((social) => social.url && social.url !== "#" && social.url !== "").map((social) => (
       <a 
         href={social.url} 
         target="_blank" 
@@ -166,34 +166,3 @@ const { name, photoUrl, intro, introHtml, resumeUrl, socials } = data;
     }
   }
 </style>
-
-<script>
-  function revealSkills() {
-    const cards = document.querySelectorAll('.skill-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Add a slight delay based on the card's position to create a wave effect
-          const index = Array.from(cards).indexOf(entry.target);
-          setTimeout(() => {
-            entry.target.classList.add('reveal');
-          }, (index % 6) * 50); // Delay resets every row for a clean staggered look
-          
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1, // Trigger when 10% of the card is visible
-      rootMargin: '0px 0px -50px 0px' // Trigger slightly before it hits the viewport
-    });
-
-    cards.forEach(card => observer.observe(card));
-  }
-
-  // Runs on initial load
-  revealSkills();
-  
-  // Necessary for Astro View Transitions if you use them
-  document.addEventListener('astro:after-swap', revealSkills);
-</script>
