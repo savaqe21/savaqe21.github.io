@@ -1,20 +1,29 @@
 [
   {
-    "title": "Awesome Website",
-    "description": "A high-performance, SEO-optimized web application built with modern frameworks to showcase technical expertise.",
+    "title": "ITSec-Sentinel",
+    "description": "Zaawansowane narzędzie do monitorowania parametrów systemowych i wykrywania anomalii w czasie rzeczywistym.",
     "images": ["astro-01.webp", "astro-02.jpeg"],
-    "tech": ["Astro", "Tailwind"],
-    "platforms": ["web"],
-    "link": "https://astro.build/themes/details/career-portfolio-data-driven-astro-ssg/",
-    "category": "Published Website"
+    "tech": ["Python", "CustomTkinter", "psutil", "matplotlib", "scikit-learn", "sqlite3"],
+    "platforms": ["windows"],
+    "link": "https://github.com/savaqe21/ITSec-Sentinel",
+    "category": "Studia"
   },
   {
-    "title": "Demo Mobile App",
+    "title": "Pentestowanie sieci Wi-Fi",
+    "description": "Łamanie hasła sieci Wi-Fi używając aircrack-ng.",
+    "images": ["astro-02.jpeg", "#"],
+    "tech": ["Aircrack-ng", "Kali Linux", "Zewnętrzna karta sieciowa"],
+    "platforms": ["linux"],
+    "link": "https://github.com/savaqe21/Pentestowanie-sieci-WiFi-pod-katem-slabego-hasla-WPA2",
+    "category": "Hobby"
+  },
+  {
+    "title": "Operation-LezakDrop",
     "description": "A high-performance mobile application built with modern frameworks to showcase technical expertise.",
     "images": ["astro-02.jpeg", "#"],
-    "tech": ["Flutter", "Dart", "REST API"],
-    "platforms": ["apple-ios", "android"],
-    "link": "https://github.com/nbakh16/career-portfolio-template",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "platforms": ["web"],
+    "link": "https://savaqe21.github.io/Operation-LezakDrop/",
     "category": "Hobby"
   }
 ]
