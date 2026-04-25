@@ -4,15 +4,15 @@
     "role": "IT Technician",
     "period": "Marzec 2025 - Obecnie",
     "type": "Full time job",
-    "description": "Leading cross-platform mobile development using Flutter and FastAPI. Focused on scalable system design and high-performance data processing.",
-    "skills": ["Leading", "Collaboration"]
+    "description": "Zarządzanie infrastrukturą sieciową i serwerową w sektorze publicznym i prywatnym. Odpowiadam za konfigurację routerów i przełączników, optymalizację szaf RACK oraz kompleksowe wsparcie techniczne on-site, rozwiązując krytyczne incydenty użytkowników końcowych.",
+    "skills": ["Tech Support & Troubleshooting", "IT Infrastructure Management", "System & Network Admin"]
   },
   {
     "company": "Sportsmania",
     "role": "Junior Web Developer",
     "period": "Marzec 2022 - Luty 2023",
     "type": "Full time job",
-    "description": "Specializing in Business Research Methods and Strategic HRM. Applying analytical frameworks to human capital management.",
-    "skills": ["React", "Node.js", "PostgreSQL", "Docker"]
+    "description": "Kompleksowe wdrażanie serwisów marki Razzo i 7Sports (WordPress) oraz administracja sklepem PrestaShop. Odpowiadałem za architekturę baz MySQL, rozwój autorskich funkcji w JS oraz optymalizację UX bezpośrednio w kodzie platformy.",
+    "skills": ["Web Development", "Database Management"]
   }
 ]
