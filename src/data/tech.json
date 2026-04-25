@@ -10,8 +10,8 @@
       "title": "IT Infrastructure Management",
       "skills": [
         { "name": "Windows", "level": 2, "icon": "devicon:windows11" },
-        { "name": "Linux", "level": 1, "icon": "devicon:linux" },
         { "name": "MacOS", "level": 2, "icon": "devicon:apple" },
+        { "name": "Linux", "level": 1, "icon": "devicon:linux" },
         { "name": "Mikrotik", "level": 1, "icon": "skill-icons:astro" },
         { "name": "Cisco", "level": 1, "icon": "skill-icons:astro" },
         { "name": "Proxmox", "level": 1, "icon": "devicon:proxmox-wordmark" },
