@@ -3,8 +3,7 @@
     {
       "title": "Cybersecurity & Pentesting",
       "skills": [
-        { "name": "Burp Suite", "level": 1, "icon": "devicon:burpsuite" },
-        { "name": "", "level": 3, "icon": "skill-icons:astro" }
+        { "name": "Burp Suite", "level": 1, "icon": "devicon:burpsuite" }
       ]
     },
     {
@@ -13,41 +12,35 @@
         { "name": "Windows", "level": 2, "icon": "devicon:windows11" },
         { "name": "Linux", "level": 1, "icon": "devicon:linux" },
         { "name": "MacOS", "level": 2, "icon": "devicon:apple" },
-        { "name": "Mikrotik", "level": 2, "icon": "skill-icons:astro" },
-        { "name": "Cisco", "level": 2, "icon": "skill-icons:astro" },
-        { "name": "Proxmox", "level": 2, "icon": "devicon:proxmox-wordmark" },
-        { "name": "Docker", "level": 2, "icon": "devicon:docker-wordmark" }
+        { "name": "Mikrotik", "level": 1, "icon": "skill-icons:astro" },
+        { "name": "Cisco", "level": 1, "icon": "skill-icons:astro" },
+        { "name": "Proxmox", "level": 1, "icon": "devicon:proxmox-wordmark" },
+        { "name": "Docker", "level": 1, "icon": "devicon:docker-wordmark" }
       ]
     },
     {
       "title": "Embedded Systems and IoT",
       "skills": [
         { "name": "ESP32", "level": 2, "icon": "skill-icons:astro" },
-        { "name": "Raspberry PI", "level": 3, "icon": "devicon:raspberrypi" },
-        { "name": "Micropython", "level": 3, "icon": "devicon:python" },
-        { "name": "C++", "level": 2, "icon": "devicon:cplusplus" },
-        { "name": "API", "level": 3, "icon": "devicon:fastapi" }
+        { "name": "Raspberry PI", "level": 2, "icon": "devicon:raspberrypi" }
       ]
     },
     {
       "title": "Web Development",
       "skills": [
-        { "name": "HTML5", "level": 3, "icon": "devicon:html5" },
-        { "name": "CSS3", "level": 3, "icon": "devicon:css3" },
-        { "name": "JavaScript", "level": 3, "icon": "devicon:javascript" },
-        { "name": "SQL", "level": 3, "icon": "devicon:mysql" },
-        { "name": "PHP", "level": 2, "icon": "devicon:php" },
-        { "name": "Python", "level": 2, "icon": "devicon:python" },
-        { "name": "Django", "level": 2, "icon": "devicon:python" }
+        { "name": "HTML5", "level": 2, "icon": "devicon:html5" },
+        { "name": "CSS3", "level": 2, "icon": "devicon:css3" },
+        { "name": "JavaScript", "level": 1, "icon": "devicon:javascript" },
+        { "name": "SQL", "level": 1, "icon": "devicon:mysql" },
+        { "name": "PHP", "level": 1, "icon": "devicon:php" },
+        { "name": "Python", "level": 1, "icon": "devicon:python" }
       ]
     },
     {
       "title": "App Development",
       "skills": [
-        { "name": "Swift", "level": 2, "icon": "devicon:swift" },
-        { "name": "SwiftUI", "level": 2, "icon": "devicon:swift" },
-        { "name": "Foundation", "level": 3, "icon": "devicon:swift" },
-        { "name": "ML / Core ML", "level": 2, "icon": "devicon:swift" }
+        { "name": "Swift", "level": 1, "icon": "devicon:swift" },
+        { "name": "SwiftUI", "level": 1, "icon": "devicon:swift" }
       ]
     }
   ]
