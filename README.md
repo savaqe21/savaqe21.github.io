@@ -10,6 +10,7 @@ A high-performance, responsive portfolio built with **Astro**, **Tailwind CSS**,
 ## 🌟 Highlights
 - **Zero-JS by Default:** Leveraging Astro's islands architecture.
 - **JSON-First:** Update your information in `src/data/` without touching any code.
+- **Built-in Themes**: Switch between multiple professional color palettes and light/dark modes from a single config file.
 - **Fully Responsive:** Optimized for mobile, tablet, and desktop.
 - **Performance:** Optimized for perfect Lighthouse scores.
 
@@ -39,8 +40,20 @@ Make sure you have **Astro v6** and **Node.js** (v22.12.0 or higher) installed o
 
 ## 🛠️ How to Customize
 To make this portfolio yours, simply edit the JSON files in `src/data/`.
+
+### 🎨 Switching Themes
+This template comes with multiple built-in color palettes. To change the theme of your portfolio, open `src/config.ts` and update the `baseTheme` variable to one of the available options:
+
+```typescript
+export const SITE_CONFIG = {
+  // Options: 'default', 'strategic', 'innovator', 'executive'
+  baseTheme: 'default', 
+};
 ```
-Directory Structure
+*(The template will automatically handle the dark/light mode toggles for whichever base theme you choose!)*
+
+### 📁 Directory Structure
+```
 ├── public/              # Static assets (placeholder.jpg, favicon)
 ├── src/
 │   ├── components/      # Reusable Astro components
@@ -48,9 +61,13 @@ Directory Structure
 │   ├── layouts/         # Layout templates with Meta tags
 │   ├── pages/           # Site routes (index.astro)
 │   └── styles/          # global css styles
+│   └── config.ts        # Global site configuration
 ├── astro.config.mjs     # Astro configuration
 └── tsconfig.json        # Typescript configuration
 ```
+
+
+
 
 #### Useful commands and links for reference:
 
@@ -67,7 +84,7 @@ Tailwind CSS: `npx astro add tailwind`
 
 Inter font: `npm install @fontsource-variable/inter` 
 
-Host Grotesk font: `npm install @fontsource-variable/host-grotesk`
+Space Grotesk font: `npm install @fontsource-variable/space-grotesk`
 
 Astro-icon: `npx astro add astro-icon`
 
