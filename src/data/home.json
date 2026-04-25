@@ -21,6 +21,18 @@
       "showInContact": true
     },
     {
+  "name": "Archiwum",
+  "url": "https://savaqe21.github.io/MyWeb/Portfolio/3-WebPagev3.0/index.html", 
+  "icon": "mdi:archive-outline",
+  "showInContact": true
+    },
+    {
+      "name": "Email",
+      "url": "mailto:fabianlesniak@icloud.com",
+      "icon": "mdi:email",
+      "showInContact": true
+    },
+    {
       "name": "Leetcode",
       "url": "#",
       "icon": "devicon-plain:leetcode",
@@ -31,12 +43,6 @@
       "url": "#",
       "icon": "devicon-plain:behance",
       "showInContact": false
-    },
-    {
-      "name": "Email",
-      "url": "mailto:fabianlesniak@icloud.com",
-      "icon": "mdi:email",
-      "showInContact": true
     },
     {
       "name": "Whatsapp",
