@@ -3,10 +3,10 @@
     {
       "title": "Cybersecurity & Pentesting",
       "skills": [
-        { "name": "Burp Suite", "level": 3, "icon": "mdi:shield-bug" },
+        { "name": "Burp Suite", "level": 3, "icon": "mdi:bug-check-outline" },
         { "name": "ffuf", "level": 3, "icon": "mdi:shield-search" },
         { "name": "sqlmap", "level": 2, "icon": "mdi:database-search" },
-        { "name": "nmap", "level": 2, "icon": "mdi:network-outline" },
+        { "name": "nmap", "level": 2, "icon": "mdi:radar" },
         { "name": "aircrack-ng", "level": 2, "icon": "mdi:wifi-lock" }
       ]
     },
@@ -35,26 +35,6 @@
     {
       "title": "Web Development",
       "skills": [
-        { "name": "HTML5", "level": 3, "icon": "devicon:html5" },
-        { "name": "CSS3", "level": 3, "icon": "devicon:css3" },
-        { "name": "JavaScript", "level": 3, "icon": "devicon:javascript" },
-        { "name": "SQL", "level": 3, "icon": "devicon:mysql" },
-        { "name": "PHP", "level": 2, "icon": "devicon:php" },
-        { "name": "Python", "level": 2, "icon": "devicon:python" },
-        { "name": "Django", "level": 2, "icon": "devicon:django" }
-      ]
-    },
-    {
-      "title": "App Development",
-      "skills": [
-        { "name": "Swift", "level": 2, "icon": "devicon:swift" },
-        { "name": "SwiftUI", "level": 2, "icon": "devicon:apple" },
-        { "name": "Foundation", "level": 3, "icon": "mdi:layers-outline" },
-        { "name": "ML / Core ML", "level": 2, "icon": "mdi:brain" }
-      ]
-    }
-  ]
-}      "skills": [
         { "name": "HTML5", "level": 3, "icon": "devicon:html5" },
         { "name": "CSS3", "level": 3, "icon": "devicon:css3" },
         { "name": "JavaScript", "level": 3, "icon": "devicon:javascript" },
