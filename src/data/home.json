@@ -27,10 +27,10 @@
       "showInContact": true
     },
     {
-  "name": "Archiwum",
-  "url": "https://savaqe21.github.io/MyWeb/Portfolio/3-WebPagev3.0/index.html", 
-  "icon": "mdi:archive-outline",
-  "showInContact": true
+      "name": "Archiwum",
+      "url": "https://savaqe21.github.io/MyWeb/Portfolio/3-WebPagev3.0/index.html", 
+      "icon": "mdi:archive",
+      "showInContact": true
     },
     {
       "name": "Leetcode",
