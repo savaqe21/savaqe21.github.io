@@ -3,7 +3,7 @@
     {
       "title": "Cybersecurity & Pentesting",
       "skills": [
-        { "name": "Burp Suite", "level": 3, "icon": "skill-icons:astro" },
+        { "name": "Burp Suite", "level": 3, "icon": "devicon:burpsuite" },
         { "name": "ffuf", "level": 3, "icon": "skill-icons:astro" },
         { "name": "sqlmap", "level": 2, "icon": "skill-icons:astro" },
         { "name": "nmap", "level": 2, "icon": "skill-icons:astro" },
