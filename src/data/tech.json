@@ -1,35 +1,56 @@
 {
   "categories": [
     {
-      "title": "Mobile Development",
+      "title": "Cybersecurity & Pentesting",
       "skills": [
-        { "name": "Flutter", "level": 3, "icon": "skill-icons:flutter-dark" },
-        { "name": "Dart", "level": 3, "icon": "skill-icons:dart-dark" },
-        { "name": "Kotlin", "level": 1, "icon": "skill-icons:kotlin-dark" }
+        { "name": "Burp Suite", "level": 3, "icon": "skill-icons:flutter-dark" },
+        { "name": "ffuf", "level": 3, "icon": "skill-icons:dart-dark" },
+        { "name": "sqlmap", "level": 1, "icon": "skill-icons:kotlin-dark" }
+        { "name": "nmap", "level": 1, "icon": "skill-icons:kotlin-dark" }
+        { "name": "aircrack-ng", "level": 1, "icon": "skill-icons:kotlin-dark" }
       ]
     },
     {
-      "title": "Frontend",
+      "title": "IT Infrastructure Management",
       "skills": [
-        { "name": "Astro", "level": 2, "icon": "skill-icons:astro" },
-        { "name": "HTML", "level": 2, "icon": "skill-icons:html" },
-        { "name": "CSS", "level": 2, "icon": "skill-icons:css" },
-        { "name": "Tailwind CSS", "level": 1, "icon": "skill-icons:tailwindcss-dark" }
+        { "name": "Windows", "level": 2, "icon": "skill-icons:astro" },
+        { "name": "Linux", "level": 2, "icon": "skill-icons:html" },
+        { "name": "MacOS", "level": 2, "icon": "skill-icons:css" },
+        { "name": "Mikrotik", "level": 1, "icon": "skill-icons:tailwindcss-dark" }
+        { "name": "Cisco", "level": 1, "icon": "skill-icons:tailwindcss-dark" }
+        { "name": "Proxmox", "level": 1, "icon": "skill-icons:tailwindcss-dark" }
+        { "name": "Docker", "level": 1, "icon": "skill-icons:tailwindcss-dark" }
       ]
     },
     {
-      "title": "Backend",
+      "title": "Embedded Systems and IoT",
       "skills": [
-        { "name": "FastAPI", "level": 2, "icon": "skill-icons:fastapi" },
-        { "name": "Python", "level": 2, "icon": "skill-icons:python-dark" },
-        { "name": "Firebase", "level": 3, "icon": "vscode-icons:file-type-firebase" }
+        { "name": "ESP", "level": 2, "icon": "skill-icons:fastapi" },
+        { "name": "RaspberryPI", "level": 2, "icon": "skill-icons:python-dark" },
+        { "name": "Micropython", "level": 3, "icon": "vscode-icons:file-type-firebase" }
+        { "name": "C++", "level": 3, "icon": "vscode-icons:file-type-firebase" }
+        { "name": "API", "level": 3, "icon": "vscode-icons:file-type-firebase" }
       ]
     },
     {
-      "title": "Database",
+      "title": "Web Development",
       "skills": [
-        { "name": "SQLite", "level": 3, "icon": "skill-icons:sqlite" },
-        { "name": "PostgreSQL", "level": 2, "icon": "skill-icons:postgresql-dark" }
+        { "name": "HTML", "level": 2, "icon": "skill-icons:postgresql-dark" }
+        { "name": "CSS", "level": 2, "icon": "skill-icons:postgresql-dark" }
+        { "name": "JavaScript", "level": 2, "icon": "skill-icons:postgresql-dark" }
+        { "name": "SQL", "level": 3, "icon": "skill-icons:sqlite" },
+        { "name": "PHP", "level": 2, "icon": "skill-icons:postgresql-dark" }
+        { "name": "Python", "level": 2, "icon": "skill-icons:postgresql-dark" }
+        { "name": "Django", "level": 3, "icon": "vscode-icons:file-type-firebase" }
+      ]
+    },
+    {
+      "title": "App Development",
+      "skills": [
+        { "name": "Swift", "level": 2, "icon": "skill-icons:postgresql-dark" }
+        { "name": "SwiftUI", "level": 2, "icon": "skill-icons:postgresql-dark" }
+        { "name": "Foundation", "level": 3, "icon": "vscode-icons:file-type-firebase" }
+        { "name": "Core and Create ML", "level": 3, "icon": "vscode-icons:file-type-firebase" }
       ]
     }
   ]
