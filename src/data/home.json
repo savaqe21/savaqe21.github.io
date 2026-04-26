@@ -2,7 +2,7 @@
   "name": "Fabian Leśniak",
   "photoUrl": "favicon.svg",
   "intro": "Co robię na co dzień? Nie lubię stać w miejscu, dlatego łączę studia z pracą i własnymi projektami. Opiekuję się infrastrukturą i użytkownikami dbam o to, żeby wszystko działało jak należy. Moje podejście? Proste: nie wiem czegoś dzisiaj? To usiądę i będę cisnąć temat tak długo, aż go opanuję.",
-  "introHtml": "Co robię na co dzień? <span class='text-white font-bold'>Nie lubię stać w miejscu,</span>, dlatego łączę studia z pracą i własnymi projektami. Opiekuję się infrastrukturą i użytkownikami dbam o to, żeby wszystko działało jak należy. <span class='text-white font-bold'>Moje podejście?</span> Proste: nie wiem czegoś dzisiaj? To usiądę i będę cisnąć temat tak długo, aż go opanuję.",
+  "introHtml": "Co robię na co dzień? <span class='text-maintext font-bold'>Nie lubię stać w miejscu,</span> 🚀, dlatego łączę studia z pracą i własnymi projektami. Opiekuję się infrastrukturą i użytkownikami — dbam o to, żeby wszystko działało jak należy 🛠️. <span class='text-maintext font-bold'>Moje podejście?</span> Proste: nie wiem czegoś dzisiaj? To usiądę i będę cisnąć temat tak długo, aż go opanuję 🧠.",
   "webpageTitle": "Fabian Leśniak",
   "resumeUrl": "#",
 
@@ -28,7 +28,7 @@
     },
     {
       "name": "Archiwum",
-      "url": "https://savaqe21.github.io/MyWeb/Portfolio/3-WebPagev3.0/index.html", 
+      "url": "https://savaqe21.github.io/MyWeb/Portfolio/3-WebPagev3.0/index.html",
       "icon": "mdi:archive",
       "showInContact": true
     },

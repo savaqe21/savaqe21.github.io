@@ -3,91 +3,71 @@ import ProjectCard from './project-card.astro';
 import projectsData from '../data/projects.json';
 ---
 
-<section id="projects" class="section-container overflow-hidden">
+<section id="projects" class="section-container">
   <div class="container mx-auto">
-    <div class="mb-16 project-header">
+    <div class="mb-16 project-header opacity-0">
       <h2 class="text-3xl md:text-4xl font-heading font-bold text-maintext mb-2 flex items-center gap-4">
-          <span class="text-accent">/</span> Featured Projects
-        </h2>
-      <p class="text-subtext font-body text-sm max-w-md">
-        A selection of professional work, published apps, and experimental prototypes.
+          <span class="text-accent">/</span> Projekty
+      </h2>
+      <p class="text-subtext font-body text-sm max-w-md italic">
+        Moje realizacje techniczne, od systemów IoT po infrastrukturę i software.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projectsData.map((project) => (
-        <ProjectCard project={project} />
+        <div class="project-wrapper opacity-0">
+          <ProjectCard project={project} />
+        </div>
       ))}
     </div>
   </div>
 </section>
 
-
 <style>
-  /* Header Initial State */
-  .project-header {
-    opacity: 0;
+  .project-header, .project-wrapper {
     transform: translateY(20px);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Cards Initial State */
-  .project-card {
-    opacity: 0; /* Ensuring cards start hidden too */
-    transform: translateY(20px) scale(0.95);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  /* Shared Revealed State */
-  .project-header.reveal,
-  .project-card.reveal {
+  .project-header.reveal, .project-wrapper.reveal {
     opacity: 1 !important;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 </style>
 
 <script>
   const initProjectReveal = () => {
-    const header = document.querySelector('.project-header');
-    const cards = document.querySelectorAll('.project-card');
-    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const target = entry.target as HTMLElement;
-          
-          // Check if the intersecting element is the header
-          if (target.classList.contains('project-header')) {
-            target.classList.add('reveal');
-            observer.unobserve(target);
-          } 
-          // Check if the intersecting element is a project card
-          else if (target.classList.contains('project-card')) {
-            const index = Array.from(cards).indexOf(target);
-            
-            // Stagger effect based on row position (only for cards)
-            setTimeout(() => {
-              target.classList.add('reveal');
-            }, (index % 3) * 150);
-            
-            observer.unobserve(target);
-          }
+          target.classList.add('reveal');
+          observer.unobserve(target);
         }
       });
-    }, { 
-      threshold: 0.15, 
-      rootMargin: '0px 0px -10px 0px' 
-    });
+    }, { threshold: 0.1 });
 
-    // Observe the header
-    if (header) observer.observe(header);
-    
-    // Observe all cards
-    cards.forEach(card => observer.observe(card));
+    document.querySelectorAll('.project-header, .project-wrapper').forEach(el => observer.observe(el));
   };
 
-  window.addEventListener('load', initProjectReveal);
+  const initSliders = () => {
+    document.querySelectorAll('.image-slider').forEach(slider => {
+      const images = slider.querySelectorAll('img');
+      if (images.length <= 1) return;
+      let curr = 0;
+      setInterval(() => {
+        images[curr].classList.replace('opacity-100', 'opacity-0');
+        curr = (curr + 1) % images.length;
+        images[curr].classList.replace('opacity-0', 'opacity-100');
+      }, 4000);
+    });
+  };
 
-  // Support for Astro View Transitions
-  document.addEventListener('astro:after-swap', initProjectReveal);
+  initProjectReveal();
+  initSliders();
+  document.addEventListener('astro:after-swap', () => {
+    initProjectReveal();
+    initSliders();
+  });
 </script>

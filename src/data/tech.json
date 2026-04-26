@@ -1,46 +1,28 @@
 {
   "categories": [
     {
-      "title": "Cybersecurity & Pentesting",
+      "title": "Główne - w tym pracuję",
       "skills": [
-        { "name": "Burp Suite", "level": 1, "icon": "devicon:burpsuite" }
+        { "name": "System Administration", "icon": "mdi:server-security" },
+        { "name": "Network Administration", "icon": "mdi:router-network" },
+        { "name": "IT Infrastructure", "icon": "mdi:office-building-cog" },
+        { "name": "Technical Support", "icon": "mdi:hammer-wrench" }
       ]
     },
     {
-      "title": "IT Infrastructure Management",
+      "title": "Pasje i Hobby",
       "skills": [
-        { "name": "Windows", "level": 2, "icon": "devicon:windows11" },
-        { "name": "MacOS", "level": 2, "icon": "devicon:apple" },
-        { "name": "Linux", "level": 1, "icon": "devicon:linux" },
-        { "name": "Mikrotik", "level": 1, "icon": "skill-icons:astro" },
-        { "name": "Cisco", "level": 1, "icon": "skill-icons:astro" },
-        { "name": "Proxmox", "level": 1, "icon": "devicon:proxmox-wordmark" },
-        { "name": "Docker", "level": 1, "icon": "devicon:docker-wordmark" }
+        { "name": "Cybersecurity", "icon": "mdi:shield-lock" },
+        { "name": "Pentesting", "icon": "mdi:bug-check" },
+        { "name": "IoT", "icon": "mdi:chip" }
       ]
     },
     {
-      "title": "Embedded Systems and IoT",
+      "title": "Pozostałe doświadczenie",
       "skills": [
-        { "name": "ESP32", "level": 2, "icon": "skill-icons:astro" },
-        { "name": "Raspberry PI", "level": 2, "icon": "devicon:raspberrypi" }
-      ]
-    },
-    {
-      "title": "Web Development",
-      "skills": [
-        { "name": "HTML5", "level": 2, "icon": "devicon:html5" },
-        { "name": "CSS3", "level": 2, "icon": "devicon:css3" },
-        { "name": "JavaScript", "level": 1, "icon": "devicon:javascript" },
-        { "name": "SQL", "level": 1, "icon": "devicon:mysql" },
-        { "name": "PHP", "level": 1, "icon": "devicon:php" },
-        { "name": "Python", "level": 1, "icon": "devicon:python" }
-      ]
-    },
-    {
-      "title": "App Development",
-      "skills": [
-        { "name": "Swift", "level": 1, "icon": "devicon:swift" },
-        { "name": "SwiftUI", "level": 1, "icon": "devicon:swift" }
+        { "name": "Web Development", "icon": "mdi:xml" },
+        { "name": "App Development", "icon": "mdi:cellphone-cog" },
+        { "name": "Database Management", "icon": "mdi:database-search" }
       ]
     }
   ]

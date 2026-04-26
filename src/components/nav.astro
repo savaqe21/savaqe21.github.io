@@ -9,17 +9,17 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   {
-    label: "Home",
+    label: "Start",
     href: "#home",
     icon: `mdi:home`,
   },
   {
-    label: "Career",
+    label: "Kariera",
     href: "#career",
     icon: `mdi:work`,
   },
   {
-    label: "Projects",
+    label: "Projekty",
     href: "#projects",
     icon: `mdi:computer`,
   },
@@ -29,12 +29,22 @@ const navItems: NavItem[] = [
     icon: `mdi:code-tags`,
   },
   // {
-  //   label: "Education",
+  //   label: "Edukacja",
   //   href: "#contact",
   //   icon: `mdi:message`,
   // },
   {
-    label: "Contact",
+    label: "CTF",
+    href: "#ctf",
+    icon: `mdi:flag-variant`,
+  },
+  {
+    label: "Certyfikaty",
+    href: "#certificates",
+    icon: `mdi:certificate`,
+  },
+  {
+    label: "Kontakt",
     href: "#contact",
     icon: `mdi:message`,
   }
@@ -322,4 +332,3 @@ const navItems: NavItem[] = [
     sections.forEach((section) => observer.observe(section));
   });
 </script>
-
