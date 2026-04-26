@@ -2,7 +2,6 @@
   {
     "title": "ITSec-Sentinel",
     "description": "Zaawansowane narzędzie do monitorowania parametrów systemowych i wykrywania anomalii w czasie rzeczywistym.",
-    "images": ["tapeta.png"],
     "tech": [
       "Python",
       "CustomTkinter",
@@ -18,7 +17,6 @@
   {
     "title": "Pentestowanie sieci Wi-Fi",
     "description": "Łamanie hasła sieci Wi-Fi używając aircrack-ng.",
-    "images": ["tapeta.png"],
     "tech": ["Aircrack-ng", "Kali Linux", "Zewnętrzna karta sieciowa"],
     "platforms": ["linux"],
     "link": "https://github.com/savaqe21/Pentestowanie-sieci-WiFi-pod-katem-slabego-hasla-WPA2",
@@ -26,11 +24,42 @@
   },
   {
     "title": "Operation-LezakDrop",
-    "description": "A high-performance mobile application built with modern frameworks to showcase technical expertise.",
-    "images": ["tapeta.png"],
+    "description": "Wydajna aplikacja mobilna zbudowana w oparciu o nowoczesne frameworki, służąca do prezentowania wiedzy technicznej o leżaku (dostałem go!).",
     "tech": ["HTML", "CSS", "JavaScript"],
     "platforms": ["web"],
     "link": "https://savaqe21.github.io/Operation-LezakDrop/",
+    "category": "Hobby"
+  },
+  {
+    "title": "MyWeb",
+    "description": "Moje wcześniejsze portfolio techniczne. Projekt skupia się na czystym kodzie i nowoczesnym designie, wykorzystując zaawansowane techniki stylowania CSS oraz interaktywność JavaScript.",
+    "tech": ["CSS", "HTML", "JavaScript"],
+    "platforms": ["web"],
+    "link": "https://github.com/savaqe21/MyWeb",
+    "category": "Hobby"
+  },
+  {
+    "title": "MyIoT",
+    "description": "Projekt z zakresu Internetu Rzeczy skupiony na wydajności i niskopoziomowej kontroli urządzeń. System integruje logikę C++ z interfejsem PHP, umożliwiając zdalne monitorowanie i zarządzanie inteligentnym sprzętem.",
+    "tech": ["C++", "PHP", "ESP", "IoT"],
+    "platforms": ["chip"],
+    "link": "https://github.com/savaqe21/MyIoT",
+    "category": "Studia"
+  },
+  {
+    "title": "MyDjango",
+    "description": "Zaawansowana aplikacja webowa typu Fullstack. Wykorzystuje framework Django do obsługi logiki serwerowej i baz danych, połączony z responsywnym interfejsem użytkownika stworzonym w czystym CSS i JavaScript.",
+    "tech": ["Python", "Django", "JavaScript", "CSS", "HTML"],
+    "platforms": ["web"],
+    "link": "https://github.com/savaqe21/MyDjango",
+    "category": "Studia"
+  },
+  {
+    "title": "MyApp",
+    "description": "Natywne aplikacje mobilne stworzone w całości w języku Swift. Projekt skupia się na wykorzystaniu ekosystemu Apple, oferując wysoką wydajność, płynność działania oraz nowoczesny interfejs użytkownika.",
+    "tech": ["Swift", "iOS", "Xcode", "SwiftUI"],
+    "platforms": ["apple"],
+    "link": "https://github.com/savaqe21/MyApp",
     "category": "Hobby"
   }
 ]

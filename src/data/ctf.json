@@ -1,38 +1,38 @@
 [
   {
-    "platform": "Hack The Box",
-    "rank": "Pro Hacker",
-    "points": "450",
-    "pwned": "12 Machines",
-    "link": "https://app.hackthebox.com/users/TWOJ_ID",
-    "icon": "simple-icons:hackthebox",
-    "color": "#9FEF00"
-  },
-  {
-    "platform": "TryHackMe",
-    "rank": "Top 5%",
-    "points": "2500",
-    "pwned": "45 Rooms",
-    "link": "https://tryhackme.com/p/TWOJ_NICK",
-    "icon": "simple-icons:tryhackme",
-    "color": "#FF0000"
-  },
-  {
     "platform": "PortSwigger Academy",
-    "rank": "Apprentice / Practitioner",
-    "points": "15 Labs",
+    "rank": "Apprentice",
+    "points": "6 Labs",
     "pwned": "Web Security",
-    "link": "https://portswigger.net/users/TWOJ_ID",
+    "link": "#",
     "icon": "simple-icons:portswigger",
     "color": "#FF6633"
   },
   {
     "platform": "Sekurak CTF",
     "rank": "Active Player",
-    "points": "Wpisz Punkty",
-    "pwned": "X Wyzwań",
+    "points": "20",
+    "pwned": "4",
     "link": "#",
     "icon": "mdi:shield-bug-outline",
     "color": "#B11F24"
+  },
+  {
+    "platform": "Hack The Box",
+    "rank": "Apprentice",
+    "points": "0",
+    "pwned": "0 Machines",
+    "link": "https://app.hackthebox.com/public/users/2143818",
+    "icon": "simple-icons:hackthebox",
+    "color": "#9FEF00"
+  },
+  {
+    "platform": "TryHackMe",
+    "rank": "Top 85%",
+    "points": "0",
+    "pwned": "1 Rooms",
+    "link": "https://tryhackme.com/p/savaqe21",
+    "icon": "simple-icons:tryhackme",
+    "color": "#FF0000"
   }
 ]
