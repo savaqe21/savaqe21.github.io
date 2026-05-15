@@ -1,11 +1,15 @@
 [
   {
     "company": "Inspiria.IT",
-    "role": "IT Technician",
+    "role": "Junior IT Specialist",
     "period": "Marzec 2025 - Obecnie",
     "type": "Full time job",
     "description": "Zarządzanie infrastrukturą sieciową i serwerową w sektorze publicznym i prywatnym. Odpowiadam za konfigurację routerów i przełączników, optymalizację szaf RACK oraz kompleksowe wsparcie techniczne on-site, rozwiązując krytyczne incydenty użytkowników końcowych.",
-    "skills": ["Tech Support & Troubleshooting", "IT Infrastructure Management", "System & Network Admin"]
+    "skills": [
+      "Tech Support & Troubleshooting",
+      "IT Infrastructure Management",
+      "System & Network Admin"
+    ]
   },
   {
     "company": "Sportsmania",
