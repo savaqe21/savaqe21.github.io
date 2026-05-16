@@ -10,7 +10,7 @@
       "OpenCV",
       "Label Studio"
     ],
-    "platforms": ["macos"],
+    "platforms": ["apple"],
     "link": "https://github.com/savaqe21/Realtime-Object-Detection",
     "category": "Studia"
   },
