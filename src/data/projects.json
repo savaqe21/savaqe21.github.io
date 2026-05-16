@@ -1,5 +1,20 @@
 [
   {
+    "title": "Realtime-Object-Detection",
+    "description": "System wizyjny do wykrywania obiektów (długopisy, kalkulatory) w czasie rzeczywistym, wytrenowany i zoptymalizowany lokalnie na architekturze Apple Silicon przy użyciu MPS.",
+    "tech": [
+      "Python",
+      "Ultralytics",
+      "PyTorch",
+      "Conda",
+      "OpenCV",
+      "Label Studio"
+    ],
+    "platforms": ["macos"],
+    "link": "https://github.com/savaqe21/Realtime-Object-Detection",
+    "category": "Studia"
+  },
+  {
     "title": "ITSec-Sentinel",
     "description": "Zaawansowane narzędzie do monitorowania parametrów systemowych i wykrywania anomalii w czasie rzeczywistym.",
     "tech": [
