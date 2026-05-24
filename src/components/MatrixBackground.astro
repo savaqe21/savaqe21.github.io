@@ -1,0 +1,86 @@
+---
+// Zwiększyłem liczbę strumieni do 60, aby przy krótszych liniach zachować idealne wypełnienie ekranu
+const streams = Array.from({ length: 60 }).map(() => {
+  const leftPosition = Math.random() * 100;
+  const animDelay = Math.random() * -25;
+  const animDuration = 8 + Math.random() * 14; // Bardziej zróżnicowana dynamika spadania
+  
+  // ZMIANA: Losowa długość strumienia od 6 do 18 znaków dla lepszej asymetrii
+  const streamLength = Math.floor(6 + Math.random() * 13);
+  
+  // Cyberpunkowy i hakerski słownik znaków
+  const matrixGlyphs = [
+    "0", "1", "0", "1", "0", "1", // Wyższa waga dla binarów, aby trzymać ITsec vibe
+    "ｱ", "ｲ", "ｳ", "ｴ", "ｵ", "ｶ", "ｷ", "ｸ", "ｹ", "ｺ", "ｻ", "ｼ", "ｽ", "ｾ", "ｿ",
+    "*", "+", "-", "x", "/", "=", "%", "&", "$", "#", "@", "?", "!", "[", "]", "{", "}", "µ", "§", "¶"
+  ];
+
+  const characters = Array.from({ length: streamLength })
+    .map(() => matrixGlyphs[Math.floor(Math.random() * matrixGlyphs.length)])
+    .join("\n");
+
+  return { leftPosition, animDelay, animDuration, characters };
+});
+---
+
+<div class="matrix-master-container">
+  <div class="matrix-rain-overlay">
+    {streams.map((stream) => (
+      <div 
+        class="matrix-stream" 
+        style={`left: ${stream.leftPosition}%; animation-delay: ${stream.animDelay}s; animation-duration: ${stream.animDuration}s;`}
+      >
+        {stream.characters}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  /* Perfekcyjny, sprawdzony pancerz HUD overlay */
+  .matrix-master-container {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999 !important;
+    pointer-events: none;
+    overflow: hidden;
+    user-select: none;
+    background: transparent !important;
+  }
+
+  .matrix-rain-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.12; /* Optymalne 12% widoczności */
+  }
+
+  .matrix-stream {
+    position: absolute;
+    top: -450px; /* Zapas na dłuższe linie */
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: pre-line;
+    text-align: center;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    text-shadow: 0 0 4px var(--color-accent);
+    will-change: transform;
+    animation: matrixFall linear infinite;
+  }
+
+  @keyframes matrixFall {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(calc(100vh + 500px)); }
+  }
+
+  /* Tryb Jasny */
+  :global([data-theme$="-light"]) .matrix-rain-overlay {
+    opacity: 0.06;
+  }
+</style>

@@ -6,29 +6,31 @@ import Tech from "../components/tech.astro";
 import Projects from "../components/projects.astro";
 import Contact from "../components/contact.astro";
 import Career from "../components/career.astro";
-import localData from '../data/home.json';
 import Certificates from "../components/certificates.astro";
 import Ctf from "../components/ctf.astro";
+
+// Ładowanie lokalnych danych z pliku JSON
+import localData from '../data/home.json';
 
 interface ProfileData {
   webpageTitle: string;
 }
 
-const isApiLive = import.meta.env.PROD; // Auto true in production
-const BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
+// Pobieramy adres URL do API z pliku .env (ujednolicona nazwa zmiennej)
+const API_URL = import.meta.env.PUBLIC_API_URL;
+let data: ProfileData;
 
-let data: ProfileData; // data as ProfileData
-
-if (isApiLive && BASE_URL) {
+if (API_URL) {
   try {
-    const response = await fetch(`${BASE_URL}/home`);
-    if (!response.ok) throw new Error('Network response was not ok');
+    const response = await fetch(`${API_URL}/home`);
+    if (!response.ok) throw new Error('Serwer API zwrócił błąd');
     data = await response.json();
   } catch (error) {
-    console.error("API Fetch failed, falling back to mock data", error);
+    console.error("Błąd pobierania z API, ładuję dane lokalne:", error);
     data = localData as ProfileData;
   }
 } else {
+  // Jeśli zmienna w .env jest pusta (Twój obecny tryb), od razu ładujemy lokalnego JSON-a
   data = localData as ProfileData;
 }
 
@@ -36,12 +38,12 @@ const { webpageTitle } = data;
 ---
 
 <Layout title={webpageTitle}>
-  	<Nav />
-	<Home />
-	<Career />
-	<Projects />
-	<Tech />
+  <Nav />
+  <Home />
+  <Career />
+  <Projects />
+  <Tech />
   <Ctf />
   <Certificates />
-	<Contact />
+  <Contact />
 </Layout>

@@ -2,25 +2,26 @@
 import { Icon } from 'astro-icon/components';
 const { project } = Astro.props;
 
+// Wyciągamy nazwę ikony z pliku JSON (np. mdi:apple)
 const mainPlatform = project.platforms && project.platforms.length > 0 
   ? project.platforms[0] 
   : 'arrow-top-right';
 ---
 
-<div class="project-card group relative bg-background border border-white/10 rounded-2xl overflow-hidden hover:border-accent/50 transition-all duration-500 shadow-xl flex flex-col h-full min-h-[220px]">
+<div class="project-card group relative glass-card rounded-2xl overflow-hidden flex flex-col h-full min-h-[220px] relative z-10">
   
-  <div class="absolute -right-10 -bottom-12 text-accent opacity-[0.08] select-none group-hover:opacity-[0.18] group-hover:-translate-x-6 group-hover:-translate-y-4 transition-all duration-700 pointer-events-none z-0">
+  <div class="absolute -right-10 -bottom-12 text-accent opacity-[0.06] select-none group-hover:opacity-[0.16] group-hover:-translate-x-6 group-hover:-translate-y-4 transition-all duration-700 pointer-events-none z-0">
     <Icon 
       name={`mdi:${mainPlatform}`} 
-      class="text-[15rem] rotate-[-15deg] filter blur-[2px]" 
+      class="text-[15rem] rotate-[-15deg] filter blur-[3px]" 
     />
   </div>
 
   <div class="p-6 flex flex-col flex-grow relative z-10 bg-transparent">
     <div class="flex justify-between items-start gap-4 mb-4">
       <div class="min-w-0">
-        <span class="text-accent text-[9px] uppercase tracking-[0.3em] font-black block mb-1">
-          {project.category}
+        <span class="text-accent text-[9px] uppercase tracking-[0.25em] font-mono block mb-1">
+          // {project.category}
         </span>
         <h3 class="text-xl font-heading font-bold text-maintext truncate group-hover:text-accent transition-colors leading-tight">
           {project.title}
@@ -31,22 +32,23 @@ const mainPlatform = project.platforms && project.platforms.length > 0
         <a 
           href={project.link} 
           target="_blank" 
-          class="shrink-0 p-2.5 rounded-xl bg-accent/10 text-accent hover:bg-accent hover:text-background transition-all duration-300 shadow-lg border border-accent/20"
+          aria-label={`Zobacz szczegóły projektu: ${project.title}`}
+          class="shrink-0 p-2.5 rounded-xl bg-accent/10 text-accent hover:bg-accent hover:text-background transition-all duration-300 shadow-lg border border-accent/20 font-mono text-xs flex items-center justify-center"
         >
-          <Icon name={`mdi:${mainPlatform}`} class="w-6 h-6" />
+          <Icon name={`mdi:${mainPlatform}`} class="w-5 h-5" />
         </a>
       )}
     </div>
 
-    <div class="h-[60px]"> {/* Stała wysokość kontenera na tekst zapobiega skokom */}
-      <p class="text-subtext text-[13px] font-body leading-relaxed line-clamp-3">
+    <div class="h-[60px]"> 
+      <p class="text-subtext font-body text-[13px] leading-relaxed line-clamp-3">
         {project.description}
       </p>
     </div>
 
     <div class="mt-auto pt-6 flex flex-wrap gap-2">
       {project.tech?.map((t: string) => (
-        <span class="px-3 py-1 rounded-lg text-[10px] font-bold bg-white/5 border border-white/5 text-subtext group-hover:border-accent/30 group-hover:text-maintext transition-all">
+        <span class="px-2.5 py-1 rounded-md text-[9px] font-bold bg-white/5 border border-white/5 text-subtext group-hover:border-accent/30 group-hover:text-maintext transition-all font-mono">
           {t}
         </span>
       ))}

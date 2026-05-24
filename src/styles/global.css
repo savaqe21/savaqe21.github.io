@@ -3,12 +3,17 @@
 @import '@fontsource-variable/inter';
 
 @theme {
-  /* Base Colors */
-  --color-background: #0f0d29;
-  --color-accent: #a78bfa;
+  /* Base Colors - Fallback dla głównego motywu (Elite Gold) */
+  --color-background: #080705;
+  --color-accent: #e5d283;
   --color-maintext: #ffffff;
-  --color-subtext: #b2bed1;
-  --color-textrain: #7d7b9c;
+  --color-subtext: #9abcda;
+  --color-textrain: #2c2714;
+
+  /* Glassmorphism Global Tokens */
+  --color-glass-bg: rgba(255, 255, 255, 0.02);
+  --color-glass-border: rgba(229, 210, 131, 0.15);
+  --glass-blur: blur(12px);
 
   /* Fonts */
   --font-heading: 'Space Grotesk Variable', sans-serif;
@@ -24,10 +29,10 @@
       opacity: 0;
     }
     10% {
-      opacity: 0.5;
+      opacity: 0.4;
     }
     90% {
-      opacity: 0.3;
+      opacity: 0.2;
     }
     100% {
       transform: translateY(90vh);
@@ -43,90 +48,43 @@
       transform: translateY(0);
     }
     2.6% {
-      transform: translateY(-8px);
+      transform: translateY(-6px);
     }
     8% {
-      transform: translateY(-8px);
-    }
-  }
-
-  @keyframes launch {
-    0% {
-      transform: translateY(0) scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-50px) scale(0.5);
-      opacity: 0;
+      transform: translateY(-6px);
     }
   }
 }
 
 @layer base {
-  /* FIX: Naprawa bieli w rogach na mobilkach */
   html {
     background-color: var(--color-background);
     scrollbar-gutter: stable;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
   }
 
-  /* Theme Definitions */
+  /* ==========================================
+     JEDYNY MATRYCOWY MOTYW: ELITE GOLD
+     ========================================== */
   :root,
-  [data-theme='default-dark'] {
-    --color-background: #0f0d29;
-    --color-accent: #a78bfa;
-    --color-maintext: #ffffff;
-    --color-subtext: #b2bed1;
-    --color-textrain: #7d7b9c;
+  [data-theme='gold-dark'] {
+    --color-background: #080705;
+    --color-accent: #e5d283;
+    --color-maintext: #fdfbfc;
+    --color-subtext: #94a3b8;
+    --color-textrain: #2a2513;
+    --color-glass-bg: rgba(255, 255, 255, 0.01);
+    --color-glass-border: rgba(229, 210, 131, 0.12);
   }
-  [data-theme='default-light'] {
-    --color-background: #f5f3ff;
-    --color-accent: #7c3aed;
-    --color-maintext: #1e1b4b;
+
+  [data-theme='gold-light'] {
+    --color-background: #fdfdfa;
+    --color-accent: #b09639;
+    --color-maintext: #1c190e;
     --color-subtext: #4b5563;
-    --color-textrain: #97a7dc;
-  }
-  [data-theme='strategic-dark'] {
-    --color-background: #0f172a;
-    --color-accent: #38bdf8;
-    --color-maintext: #f1f5f9;
-    --color-subtext: #a0adbf;
-    --color-textrain: #4d5b6f;
-  }
-  [data-theme='strategic-light'] {
-    --color-background: #f8fafc;
-    --color-accent: #0284c7;
-    --color-maintext: #0f172a;
-    --color-subtext: #475569;
-    --color-textrain: #9eb9da;
-  }
-  [data-theme='innovator-dark'] {
-    --color-background: #0b0f0e;
-    --color-accent: #bef264;
-    --color-maintext: #ffffff;
-    --color-subtext: #c4c3c3;
-    --color-textrain: #567b6c;
-  }
-  [data-theme='innovator-light'] {
-    --color-background: #f0fdf4;
-    --color-accent: #06aa73;
-    --color-maintext: #064e3b;
-    --color-subtext: #4b5563;
-    --color-textrain: #7fbc9e;
-  }
-  [data-theme='executive-dark'] {
-    --color-background: #121212;
-    --color-accent: #eab308;
-    --color-maintext: #fafaf9;
-    --color-subtext: #dad0c9;
-    --color-textrain: #777271;
-  }
-  [data-theme='executive-light'] {
-    --color-background: #fcf8f1;
-    --color-accent: #b45309;
-    --color-maintext: #1c1917;
-    --color-subtext: #71665f;
-    --color-textrain: #e2a787;
+    --color-textrain: #fef9e7;
+    --color-glass-bg: rgba(255, 255, 255, 0.65);
+    --color-glass-border: rgba(176, 150, 57, 0.15);
   }
 
   *::selection {
@@ -139,27 +97,24 @@
     min-height: 100vh;
     margin: 0;
     transition:
-      background-color 0.5s ease-in-out,
-      color 0.5s ease-in-out;
+      background-color 0.4s ease-in-out,
+      color 0.4s ease-in-out;
     position: relative;
   }
 
-  /* FIX: Stabilny gradient, który nie "skacze" na Safari iOS */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -20;
-    pointer-events: none;
-    background: linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--color-background), black 16%) 0%,
-      var(--color-background) 50%,
-      color-mix(in srgb, var(--color-background), white 16%) 100%
-    );
+  /* GWARANCJA WIDOCZNOŚCI MATRIXA: 
+     Wymuszamy pełną przezroczystość struktur, aby tło z MatrixBackground prześwitywało */
+  section,
+  .section-container,
+  main,
+  #home,
+  #career,
+  #projects,
+  #tech,
+  #ctf,
+  #certificates,
+  #contact {
+    background-color: transparent !important;
   }
 }
 
@@ -167,28 +122,40 @@
   .section-container {
     @apply py-12 md:py-20 px-4 md:px-0;
   }
-
   .falling-letter {
     @apply absolute font-heading font-extralight select-none pointer-events-none leading-none;
     animation: fall linear forwards;
   }
 
-  .launching {
-    animation: launch 0.5s ease-in forwards;
+  .glass-card {
+    background-color: var(--color-glass-bg);
+    border: 1px solid var(--color-glass-border);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    transition:
+      border-color 0.3s ease,
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .glass-card:hover {
+    border-color: color-mix(in srgb, var(--color-accent), transparent 50%);
+    box-shadow: 0 10px 30px -10px
+      color-mix(in srgb, var(--color-accent), transparent 85%);
   }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background-color: var(--color-background);
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 100px;
-  background-color: color-mix(in srgb, var(--color-accent), transparent 50%);
+  background-color: color-mix(in srgb, var(--color-accent), transparent 60%);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: color-mix(in srgb, var(--color-accent), transparent 25%);
+  background-color: color-mix(in srgb, var(--color-accent), transparent 30%);
 }

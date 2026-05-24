@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components';
 import localData from '../data/home.json';
 ---
 
-<section id="contact" class="section-container relative overflow-hidden">
+<section id="contact" class="section-container relative overflow-hidden stream-footer-fix z-10">
   <div class="absolute top-0 right-0 -z-10 w-64 h-64 bg-accent/5 blur-[100px] rounded-full"></div>
   
   <div class="container mx-auto">
@@ -25,27 +25,27 @@ import localData from '../data/home.json';
           <a 
             href={social.url} 
             target="_blank" 
-            class="contact-card opacity-0 group relative flex flex-col items-center p-8 bg-background border border-white/5 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 shadow-xl overflow-hidden"
+            class="contact-card opacity-0 group relative flex flex-col items-center p-8 glass-card rounded-2xl overflow-hidden"
           >
-            <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity blur-2xl"></div>
+            <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity blur-2xl -z-10"></div>
 
-            <div class="relative z-10 w-16 h-16 mb-6 flex items-center justify-center bg-accent/10 rounded-2xl group-hover:bg-accent group-hover:rotate-[360deg] transition-all duration-700">
+            <div class="relative z-10 w-16 h-16 mb-6 flex items-center justify-center bg-accent/10 rounded-xl group-hover:bg-accent group-hover:rotate-[360deg] transition-all duration-700">
               <Icon 
                 name={social.icon} 
-                class="w-8 h-8 text-accent group-hover:text-background transition-colors duration-500" 
+                class="w-7 h-7 text-accent group-hover:text-background transition-colors duration-500" 
               />
             </div>
 
             <div class="relative z-10 text-center">
-              <h3 class="text-maintext font-heading text-lg font-bold mb-2 group-hover:text-accent transition-colors">
+              <h3 class="text-maintext font-heading text-lg font-bold mb-1 group-hover:text-accent transition-colors">
                 {social.name}
               </h3>
-              <p class="text-subtext text-[10px] uppercase tracking-widest font-bold opacity-60">
-                {social.url.includes('mailto:') ? 'Napisz wiadomość' : 'Zobacz profil'}
+              <p class="text-accent/60 text-[9px] uppercase tracking-widest font-bold font-mono">
+                {social.url.includes('mailto:') ? '// Mail' : '// Profil'}
               </p>
             </div>
             
-            <div class="absolute -right-2 -bottom-2 text-accent/5 font-black text-6xl select-none group-hover:text-accent/10 transition-colors">
+            <div class="absolute -right-2 -bottom-2 text-accent/5 font-mono font-bold text-5xl select-none group-hover:text-accent/10 transition-colors">
               0{localData.socials.filter(s => s.showInContact).indexOf(social) + 1}
             </div>
           </a>
@@ -54,38 +54,40 @@ import localData from '../data/home.json';
 
       <div class="contact-footer opacity-0 pt-16 border-t border-white/5">
         <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+          
           <div class="order-2 md:order-1 text-center md:text-left flex-1">
-            <p class="text-maintext font-bold text-xl mb-3">{localData.name}</p>
+            <p class="text-maintext font-heading font-bold text-2xl mb-4 group-hover:text-accent transition-colors">{localData.name}</p>
             
-            <div class="space-y-2 mb-6">
-              <div class="flex items-center justify-center md:justify-start gap-2 text-subtext text-[13px] font-body">
-                <span>👨‍💻</span>Junior IT Specialist at Inspiria.IT
+            <div class="space-y-3 mb-8">
+              <div class="flex items-center justify-center md:justify-start gap-3 text-subtext text-[13px] font-body">
+                <span class="text-accent/80 font-mono text-xs">#[job]</span> Junior IT Specialist at Inspiria.IT
               </div>
-              <div class="flex items-center justify-center md:justify-start gap-2 text-subtext text-[13px] font-body">
-                <span>🛡️</span> Sekurak Insider | Cybersecurity Enthusiast
+              <div class="flex items-center justify-center md:justify-start gap-3 text-subtext text-[13px] font-body">
+                <span class="text-accent/80 font-mono text-xs">#[team]</span> Sekurak Insider | Cybersecurity Enthusiast
               </div>
-              <div class="flex items-center justify-center md:justify-start gap-2 text-subtext text-[13px] font-body">
-                <span>🎓</span> Computer Science Student at AJP Gorzów Wielkopolski
+              <div class="flex items-center justify-center md:justify-start gap-3 text-subtext text-[13px] font-body">
+                <span class="text-accent/80 font-mono text-xs">#[edu]</span> Computer Science Student at AJP Gorzów Wielkopolski
               </div>
             </div>
 
-            <p class="text-subtext/40 text-[9px] tracking-[0.5em] uppercase">© 2026 • Built with passion</p>
+            <p class="text-subtext/30 font-mono text-[9px] tracking-[0.4em] uppercase">© 2026 • Built with passion</p>
           </div>
 
-          <div class="flex flex-col items-center md:items-end gap-4 order-1 md:order-2 shrink-0">
-            <span class="text-accent text-[10px] uppercase tracking-[0.4em] font-black">Technologia Strony</span>
-            <div class="flex items-center gap-6 px-8 py-4 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-md shadow-2xl">
-              <div class="flex items-center gap-3 group">
-                <Icon name="skill-icons:astro" class="w-6 h-6 group-hover:drop-shadow-[0_0_8px_rgba(255,125,0,0.5)] transition-all duration-300" />
-                <span class="text-xs font-bold text-maintext tracking-widest uppercase">Astro</span>
+          <div class="flex flex-col items-center md:items-end gap-3 order-1 md:order-2 shrink-0">
+            <span class="text-accent text-[9px] uppercase tracking-[0.3em] font-bold font-mono">// Built With</span>
+            <div class="flex items-center gap-6 px-6 py-3.5 glass-card rounded-xl shadow-xl">
+              <div class="flex items-center gap-2.5 group">
+                <Icon name="skill-icons:astro" class="w-5 h-5 group-hover:drop-shadow-[0_0_8px_rgba(255,125,0,0.4)] transition-all duration-300" />
+                <span class="text-[11px] font-bold text-maintext tracking-widest font-mono uppercase">Astro</span>
               </div>
-              <div class="w-[1px] h-6 bg-white/10"></div>
-              <div class="flex items-center gap-3 group">
-                <Icon name="skill-icons:tailwindcss-dark" class="w-6 h-6 group-hover:drop-shadow-[0_0_8px_rgba(0,180,255,0.5)] transition-all duration-300" />
-                <span class="text-xs font-bold text-maintext tracking-widest uppercase">Tailwind</span>
+              <div class="w-[1px] h-5 bg-white/10"></div>
+              <div class="flex items-center gap-2.5 group">
+                <Icon name="skill-icons:tailwindcss-dark" class="w-5 h-5 group-hover:drop-shadow-[0_0_8px_rgba(0,180,255,0.4)] transition-all duration-300" />
+                <span class="text-[11px] font-bold text-maintext tracking-widest font-mono uppercase">Tailwind</span>
               </div>
             </div>
           </div>
+
         </div>
       </div>
       
@@ -97,8 +99,9 @@ import localData from '../data/home.json';
   .contact-header,
   .contact-footer,
   .contact-card {
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
   }
 
   .contact-header.reveal,
@@ -121,14 +124,17 @@ import localData from '../data/home.json';
           const target = entry.target as HTMLElement;
           if (target.classList.contains('contact-card')) {
             const index = Array.from(cards).indexOf(target);
-            setTimeout(() => { target.classList.add('reveal'); }, index * 100);
+            setTimeout(() => { target.classList.add('reveal'); }, index * 80);
           } else {
             target.classList.add('reveal');
           }
           observer.unobserve(target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { 
+      threshold: 0.05,
+      rootMargin: "0px 0px -30px 0px"
+    });
 
     if (header) observer.observe(header);
     if (footer) observer.observe(footer);

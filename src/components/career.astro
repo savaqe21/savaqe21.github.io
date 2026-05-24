@@ -3,8 +3,9 @@ import careerData from '../data/career.json';
 import CareerCard from './career-card.astro';
 ---
 
-<section id="career" class="section-container max-w-6xl mx-auto overflow-hidden">
+<section id="career" class="section-container max-w-6xl mx-auto overflow-hidden relative z-10">
   <div class="container mx-auto">
+    
     <div class="career-header opacity-0 mb-16">
       <h2 class="text-3xl md:text-4xl font-heading font-bold text-maintext mb-2 flex items-center gap-4">
         <span class="text-accent">/</span> Doświadczenie
@@ -15,13 +16,13 @@ import CareerCard from './career-card.astro';
     </div>
 
     <div class="relative">
-      <div class="absolute left-[11px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent via-accent/20 to-transparent"></div>
+      <div class="absolute left-[11px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent via-accent/30 to-transparent z-0"></div>
 
-      <div class="md:hidden space-y-12 relative">
+      <div class="md:hidden space-y-12 relative z-10">
         {careerData.map((item, index) => (
-          <div class="scroll-stat relative pl-10">
+          <div class="scroll-stat relative pl-10 opacity-0">
             <div class="absolute left-0 top-6 z-20">
-              <div class={`w-[24px] h-[24px] rounded-full border-4 border-background flex items-center justify-center
+              <div class={`w-[24px] h-[24px] rounded-full border-4 border-background flex items-center justify-center relative
                           ${index === 0 ? 'bg-accent shadow-[0_0_15px_var(--color-accent)] pulse' : 'bg-accent/40'}`}>
                 {index === 0 && <div class="w-1.5 h-1.5 bg-white rounded-full animate-ping"></div>}
               </div>
@@ -31,24 +32,22 @@ import CareerCard from './career-card.astro';
         ))}
       </div>
 
-      <div class="hidden md:block space-y-4 relative">
+      <div class="hidden md:block space-y-4 relative z-10">
         {careerData.map((item, index) => (
-          <div class="scroll-stat relative grid grid-cols-2 min-h-[200px]">
+          <div class="scroll-stat relative grid grid-cols-2 min-h-[200px] opacity-0">
             <div class="absolute left-1/2 -translate-x-1/2 top-8 z-20">
-               <div class={`w-[22px] h-[22px] rounded-full border-4 border-background flex items-center justify-center
-                          ${index === 0 ? 'bg-accent shadow-[0_0_20px_rgba(167,139,250,0.5)]' : 'bg-accent/30'}`}>
+               <div class={`w-[22px] h-[22px] rounded-full border-4 border-background flex items-center justify-center relative
+                          ${index === 0 ? 'bg-accent shadow-[0_0_20px_var(--color-accent)] pulse' : 'bg-accent/30'}`}>
                  {index === 0 && <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>}
                </div>
             </div>
 
-            {/* Lewa strona (parzyste) */}
             <div class="md:px-12 pb-12">
               {index % 2 === 0 ? (
                 <CareerCard item={item} variant="desktop-left" />
               ) : <div class="h-full pointer-events-none"></div>}
             </div>
 
-            {/* Prawa strona (nieparzyste) */}
             <div class="md:px-12 pb-12">
               {index % 2 !== 0 ? (
                 <CareerCard item={item} variant="desktop-right" />
@@ -63,9 +62,9 @@ import CareerCard from './career-card.astro';
 
 <style>
   .career-header, .scroll-stat {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(25px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
   }
 
   .career-header.reveal, .scroll-stat.reveal {
@@ -74,8 +73,8 @@ import CareerCard from './career-card.astro';
   }
 
   @keyframes pulse-ring {
-    0% { transform: scale(1); opacity: 0.5; }
-    100% { transform: scale(2); opacity: 0; }
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(2.2); opacity: 0; }
   }
 
   .pulse::before {
@@ -86,7 +85,7 @@ import CareerCard from './career-card.astro';
     background: var(--color-accent);
     border-radius: 50%;
     z-index: -1;
-    animation: pulse-ring 2s infinite;
+    animation: pulse-ring 2.2s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
   }
 </style>
 
@@ -99,11 +98,15 @@ import CareerCard from './career-card.astro';
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { 
+      threshold: 0.05,
+      rootMargin: "0px 0px -50px 0px" // Szybsze wyzwalanie animacji w trakcie przewijania
+    });
 
     document.querySelectorAll('.career-header, .scroll-stat').forEach(el => observer.observe(el));
   }
 
+  // Odpalenie na starcie i po zmianie podstron w Astro (View Transitions)
   revealCareer();
   document.addEventListener('astro:after-swap', revealCareer);
 </script>

@@ -3,31 +3,32 @@ import { Icon } from 'astro-icon/components';
 import certData from '../data/certificates.json';
 ---
 
-<section id="certificates" class="section-container overflow-hidden">
+<section id="certificates" class="section-container overflow-hidden relative z-10">
   <div class="container mx-auto">
+    
     <div class="cert-header opacity-0 mb-16">
       <h2 class="text-3xl md:text-4xl font-heading font-bold text-maintext mb-2 flex items-center gap-4">
         <span class="text-accent">/</span> Certyfikacje
       </h2>
       <p class="text-subtext font-body text-sm max-w-md italic">
-        Oficjalne potwierdzenia moich umiejętności technicznych i wiedzy z zakresu inżynierii sieciowej.
+        Oficjalne potwierdzenia moich umiejętności technicznych i wiedzy z zakresu inżynierii oraz bezpieczeństwa.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
       {certData.map((cert) => (
-        <div class="cert-card opacity-0 group relative bg-gradient-to-br from-accent/10 to-transparent border border-accent/20 rounded-2xl p-6 hover:border-accent/60 transition-all duration-500 hover:-translate-y-2 shadow-xl overflow-hidden">
+        <div class="cert-card opacity-0 group relative glass-card rounded-2xl p-6 overflow-hidden flex flex-col h-full">
           
-          <div class="absolute -right-4 -bottom-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-700">
-            <Icon name={cert.icon} class="w-40 h-40" />
+          <div class="absolute -right-6 -bottom-6 text-accent opacity-[0.04] group-hover:opacity-[0.12] transition-all duration-700 pointer-events-none z-0">
+            <Icon name={cert.icon} class="w-44 h-44 rotate-[-10deg] filter blur-[3px]" />
           </div>
 
           <div class="relative z-10 flex flex-col h-full">
             <div class="flex justify-between items-start mb-6">
-              <div class="p-3 bg-background/60 rounded-xl border border-white/5 shadow-inner">
-                <Icon name={cert.icon} class="w-10 h-10 group-hover:scale-110 transition-transform duration-500" />
+              <div class="p-3 bg-white/5 rounded-xl border border-white/5 shadow-inner group-hover:bg-accent/10 group-hover:border-accent/20 transition-all duration-300">
+                <Icon name={cert.icon} class="w-9 h-9 group-hover:scale-110 transition-transform duration-500 text-accent" />
               </div>
-              <span class="text-[10px] font-black tracking-widest text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
+              <span class="text-[10px] font-bold font-mono tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-md border border-accent/20">
                 {cert.date}
               </span>
             </div>
@@ -37,28 +38,30 @@ import certData from '../data/certificates.json';
                 {cert.title}
               </h3>
               <p class="text-subtext font-body text-xs flex items-center gap-2">
-                <span class="w-4 h-[1px] bg-accent/50"></span>
+                <span class="w-4 h-[1px] bg-accent/40"></span>
                 {cert.issuer}
               </p>
               
               {cert.skills && (
                 <div class="mt-4 flex flex-wrap gap-2">
-                  <span class="text-[9px] uppercase tracking-wider text-textrain bg-white/5 px-2 py-1 rounded-md border border-white/5">
-                    {cert.skills}
-                  </span>
+                  {cert.skills.split(',').map((skill) => (
+                    <span class="px-2.5 py-1 rounded-md text-[9px] font-bold bg-white/5 border border-white/5 text-subtext group-hover:border-accent/30 group-hover:text-maintext transition-all font-mono whitespace-nowrap">
+                      {skill.trim()}
+                    </span>
+                  ))}
                 </div>
               )}
             </div>
 
             {cert.link && cert.link !== "#" && (
-              <a href={cert.link} target="_blank" class="mt-8 inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-maintext hover:text-accent transition-colors group/link">
-                Weryfikuj poświadczenie
-                <Icon name="mdi:external-link" class="w-3 h-3 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+              <a href={cert.link} target="_blank" class="mt-8 inline-flex items-center gap-2 text-[10px] font-bold font-mono uppercase tracking-widest text-maintext hover:text-accent transition-colors group/link">
+                // Weryfikuj poświadczenie
+                <Icon name="mdi:external-link" class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform text-accent" />
               </a>
             )}
           </div>
 
-          <div class="absolute left-0 top-1/4 bottom-1/4 w-[2px] bg-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div class="absolute left-0 top-1/4 bottom-1/4 w-[3px] bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-r"></div>
         </div>
       ))}
     </div>
@@ -67,8 +70,9 @@ import certData from '../data/certificates.json';
 
 <style>
   .cert-header, .cert-card {
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(25px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
   }
 
   .cert-header.reveal, .cert-card.reveal {
@@ -87,7 +91,10 @@ import certData from '../data/certificates.json';
           observer.unobserve(target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { 
+      threshold: 0.05,
+      rootMargin: "0px 0px -30px 0px"
+    });
 
     document.querySelectorAll('.cert-header, .cert-card').forEach(el => observer.observe(el));
   }

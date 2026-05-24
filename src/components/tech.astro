@@ -12,64 +12,63 @@ interface Category {
   skills: Skill[];
 }
 
-const BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
+const API_URL = import.meta.env.PUBLIC_API_URL;
 let categories: Category[];
 
-try {
-  if (BASE_URL) {
-    const response = await fetch(`${BASE_URL}/tech`);
+if (API_URL) {
+  try {
+    const response = await fetch(`${API_URL}/tech`);
+    if (!response.ok) throw new Error('Serwer API zwrócił błąd');
     const data = await response.json();
     categories = data.categories;
-  } else {
+  } catch (error) {
+    console.error("Błąd pobierania technologii z API, ładuję dane lokalne:", error);
     categories = localTechData.categories;
   }
-} catch {
+} else {
   categories = localTechData.categories;
 }
 ---
 
-<section id="tech" class="section-container overflow-hidden">
+<section id="tech" class="section-container overflow-hidden relative z-10">
   <div class="container mx-auto">
+    
     <div class="tech-header opacity-0 mb-16">
       <h2 class="text-3xl md:text-4xl font-heading font-bold text-maintext mb-2 flex items-center gap-4">
         <span class="text-accent">/</span> Kompetencje
       </h2>
-      <p class="text-subtext font-body text-sm max-w-md italic border-l-2 border-accent/10 pl-4">
+      <p class="text-subtext font-body text-sm max-w-md italic border-l-2 border-accent/20 pl-4">
         Zestaw technologii i narzędzi podzielony na obszary zawodowe oraz pasje.
       </p>
     </div>
 
-    <div class="space-y-20">
+    <div class="space-y-16">
       {categories.map((category: Category) => (
-        <div class="space-y-8">
-          {/* Czysty nagłówek bez linii obok */}
-          <h3 class="font-heading text-[10px] uppercase tracking-[0.5em] text-accent font-black">
-            {category.title}
+        <div class="space-y-6">
+          <h3 class="font-mono text-[10px] uppercase tracking-[0.4em] text-accent font-bold">
+            // {category.title}
           </h3>
           
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {category.skills.map((skill: Skill) => (
-              <div class="skill-card-wrapper opacity-0 group relative p-[1px] rounded-xl transition-all duration-500 hover:-translate-y-2">
+              
+              <div class="skill-card-wrapper opacity-0 group relative flex items-center gap-4 p-4 rounded-xl glass-card h-full transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_20px_color-mix(in srgb,var(--color-accent),transparent_90%)]">
                 
-                {/* NEONOWA RAMKA */}
-                <div class="absolute inset-0 bg-accent/20 rounded-xl blur-[1px] group-hover:bg-accent/40 group-hover:blur-[4px] transition-all duration-500"></div>
-
-                {/* GŁÓWNY KAFELEK */}
-                <div class="relative flex items-center gap-4 p-4 rounded-[11px] bg-background/80 backdrop-blur-md border border-accent/20 group-hover:border-accent group-hover:bg-accent/5 transition-all duration-500 h-full">
-                  
-                  <div class="shrink-0 w-11 h-11 flex items-center justify-center rounded-lg bg-accent/5 border border-white/5 transition-colors group-hover:bg-accent/10">
-                    <Icon 
-                      name={skill.icon} 
-                      class="w-6 h-6 text-accent group-hover:scale-110 transition-all duration-500 group-hover:drop-shadow-[0_0_8px_var(--color-accent)]" 
-                    />
-                  </div>
-                  
-                  <div class="flex flex-col min-w-0">
-                    <span class="font-body text-[12px] font-bold tracking-tight text-maintext group-hover:text-white transition-colors duration-300 leading-tight">
-                      {skill.name}
-                    </span>
-                  </div>
+                <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl -z-10 blur-md"></div>
+                
+                <div class="shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/5 transition-all duration-300 group-hover:bg-accent/10 group-hover:border-accent/30 group-hover:scale-105 group-hover:shadow-[0_0_10px_color-mix(in srgb,var(--color-accent),transparent_60%)]">
+                  <Icon 
+                    name={skill.icon} 
+                    class="w-5 h-5 text-accent" 
+                  />
                 </div>
+                
+                <div class="flex flex-col min-w-0">
+                  <span class="font-body text-[13px] font-semibold tracking-tight text-maintext group-hover:text-white transition-colors duration-300 leading-tight">
+                    {skill.name}
+                  </span>
+                </div>
+
               </div>
             ))}
           </div>
@@ -82,8 +81,9 @@ try {
 <style>
   .tech-header,
   .skill-card-wrapper {
-    transform: translateY(20px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(15px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
   }
 
   .tech-header.reveal,
@@ -92,15 +92,14 @@ try {
     transform: translateY(0);
   }
 
-  /* Subtelne pływanie kafelków */
   .skill-card-wrapper {
-    animation: float 6s ease-in-out infinite;
+    animation: floating-tile 6s ease-in-out infinite;
     animation-delay: var(--float-delay, 0s);
   }
 
-  @keyframes float {
+  @keyframes floating-tile {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+    50% { transform: translateY(-4px); }
   }
 </style>
 
@@ -123,12 +122,15 @@ try {
             const index = cardsArray.indexOf(target);
             setTimeout(() => {
               target.classList.add('reveal');
-            }, (index % 5) * 50);
+            }, (index % 5) * 40);
           }
           observer.unobserve(target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { 
+      threshold: 0.01,
+      rootMargin: "0px 0px 50px 0px"
+    });
 
     document.querySelectorAll('.tech-header, .skill-card-wrapper').forEach(el => observer.observe(el));
   }
