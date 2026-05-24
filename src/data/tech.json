@@ -1,0 +1,29 @@
+{
+  "categories": [
+    {
+      "title": "Główne - w tym pracuję",
+      "skills": [
+        { "name": "System Administration", "icon": "mdi:server-security" },
+        { "name": "Network Administration", "icon": "mdi:router-network" },
+        { "name": "IT Infrastructure", "icon": "mdi:office-building-cog" },
+        { "name": "Technical Support", "icon": "mdi:hammer-wrench" }
+      ]
+    },
+    {
+      "title": "Pasje i Hobby",
+      "skills": [
+        { "name": "Cybersecurity", "icon": "mdi:shield-lock" },
+        { "name": "Pentesting", "icon": "mdi:bug-check" },
+        { "name": "IoT", "icon": "mdi:chip" }
+      ]
+    },
+    {
+      "title": "Pozostałe doświadczenie",
+      "skills": [
+        { "name": "Web Development", "icon": "mdi:xml" },
+        { "name": "App Development", "icon": "mdi:cellphone-cog" },
+        { "name": "Database Management", "icon": "mdi:database-search" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+---
+import { Icon } from 'astro-icon/components';
+import localData from '../data/home.json';
+
+interface Social {
+  name: string;
+  url: string;
+  icon: string;
+}
+
+interface ProfileData {
+  name: string;
+  photoUrl: string;
+  introHtml: string;
+  resumeUrl: string;
+  socials: Social[];
+}
+
+const data = localData as ProfileData;
+const { name, photoUrl, introHtml, resumeUrl, socials } = data;
+---
+
+<section id="home" class="flex flex-col items-center justify-center section-container pt-32 md:pt-40 gap-1 min-h-[85vh] text-center px-6">
+  
+  <div class="relative group mb-4 reveal-content" style="animation-delay: 100ms;">
+    <div class="balloon-float w-24 h-24 md:w-28 md:h-28 rounded-full border-2 border-accent overflow-hidden shadow-[0_0_50px_rgba(167,139,250,0.15)] bg-background">
+      <img 
+        src={photoUrl}
+        alt={name}
+        onerror="this.onerror=null;this.src='/placeholder.jpeg';"
+        class="w-full h-full object-cover scale-110"
+      />
+    </div>
+    <div class="balloon-float absolute -z-10 top-0 left-0 w-full h-full bg-accent rounded-full blur-[80px] opacity-20"></div>
+  </div>
+
+  <div class="reveal-content" style="animation-delay: 200ms;">
+    <p class="font-body font-light text-subtext text-sm mb-1">
+      Cześć, Nazywam się
+    </p>
+  </div>
+
+  <div class="max-w-4xl mx-auto relative z-0 reveal-content" style="animation-delay: 300ms;">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-maintext tracking-tight">
+      {name}
+    </h1>
+    <div 
+      class="text-subtext font-body text-sm md:text-base leading-relaxed mt-6 max-w-2xl mx-auto opacity-90" 
+      set:html={introHtml} 
+    />
+  </div>
+
+  <div class="mt-10 mb-6 reveal-content" style="animation-delay: 400ms;">
+    <a 
+      href={resumeUrl} 
+      target="_blank" 
+      class="group relative inline-flex items-center justify-center px-12 py-3 bg-accent/5 border border-accent/30 rounded-full text-maintext font-body transition-all duration-300 hover:bg-accent/10 hover:border-accent/60 hover:scale-105"
+    >
+      <div class="flex flex-col items-center justify-center text-center">
+        <span class="tracking-widest text-xs md:text-sm font-bold uppercase transition-transform duration-300 md:translate-y-2 md:group-hover:translate-y-0">
+          Zerknij tu
+        </span>
+        
+        <span class="text-[10px] text-subtext font-light whitespace-nowrap transition-all duration-300 opacity-100 translate-y-0 md:opacity-0 md:translate-y-1 md:group-hover:opacity-100 md:group-hover:translate-y-0">
+          FLAG[tak_ta_stronka_to_lekki_vibe_coding]
+        </span>
+      </div>
+    </a>
+  </div>
+
+  <div class="flex gap-8 mt-6 reveal-content" style="animation-delay: 500ms;">
+    {socials.filter((social) => social.url && social.url !== "#" && social.url !== "").map((social) => (
+      <a 
+        href={social.url} 
+        target="_blank" 
+        class="group relative flex flex-col items-center justify-center transition-all duration-300 hover:scale-110"
+        title={social.name}
+      >
+        <Icon 
+          name={social.icon} 
+          class="w-8 h-8 text-subtext group-hover:text-accent transition-colors duration-300" 
+        />
+        <span class="absolute -top-8 bg-accent/10 text-accent text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          {social.name}
+        </span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style is:global>
+  .reveal-content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  @keyframes revealIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .balloon-float {
+    will-change: transform;
+    animation: floating-balloon 8s ease-in-out infinite;
+  }
+
+  @keyframes floating-balloon {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(3px, -8px) rotate(1deg); }
+    66% { transform: translate(-3px, -4px) rotate(-1deg); }
+  }
+</style>

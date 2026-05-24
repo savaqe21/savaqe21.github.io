@@ -1,0 +1,22 @@
+[
+  {
+    "company": "Inspiria.IT",
+    "role": "Junior IT Specialist",
+    "period": "Marzec 2025 - Obecnie",
+    "type": "Full time job",
+    "description": "Zarządzanie infrastrukturą sieciową i serwerową w sektorze publicznym i prywatnym. Odpowiadam za konfigurację routerów i przełączników, optymalizację szaf RACK oraz kompleksowe wsparcie techniczne on-site, rozwiązując krytyczne incydenty użytkowników końcowych.",
+    "skills": [
+      "Tech Support & Troubleshooting",
+      "IT Infrastructure Management",
+      "System & Network Admin"
+    ]
+  },
+  {
+    "company": "Sportsmania",
+    "role": "Junior Web Developer",
+    "period": "Marzec 2022 - Luty 2023",
+    "type": "Full time job",
+    "description": "Kompleksowe wdrażanie serwisów marki Razzo i 7Sports (WordPress) oraz administracja sklepem PrestaShop. Odpowiadałem za architekturę baz MySQL, rozwój autorskich funkcji w JS oraz optymalizację UX bezpośrednio w kodzie platformy.",
+    "skills": ["Web Development", "Database Management"]
+  }
+]

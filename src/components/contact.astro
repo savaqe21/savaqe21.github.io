@@ -1,0 +1,140 @@
+---
+import { Icon } from 'astro-icon/components';
+import localData from '../data/home.json';
+---
+
+<section id="contact" class="section-container relative overflow-hidden">
+  <div class="absolute top-0 right-0 -z-10 w-64 h-64 bg-accent/5 blur-[100px] rounded-full"></div>
+  
+  <div class="container mx-auto">
+    <div class="space-y-20">
+      
+      <div class="contact-header opacity-0 text-center md:text-left">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-maintext mb-4 flex items-center justify-center md:justify-start gap-4">
+          <span class="text-accent">/</span> Kontakt
+        </h2>
+        <p class="text-subtext font-body text-sm max-w-lg italic">
+          Zawsze chętnie pogadam o nowych wyzwaniach w IT, sieciach czy projektach security. Wybierz dogodną drogę.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {localData.socials
+        .filter((social) => social.showInContact && social.url && social.url !== "#" && social.url !== "")
+        .map((social) => (
+          <a 
+            href={social.url} 
+            target="_blank" 
+            class="contact-card opacity-0 group relative flex flex-col items-center p-8 bg-background border border-white/5 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 shadow-xl overflow-hidden"
+          >
+            <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity blur-2xl"></div>
+
+            <div class="relative z-10 w-16 h-16 mb-6 flex items-center justify-center bg-accent/10 rounded-2xl group-hover:bg-accent group-hover:rotate-[360deg] transition-all duration-700">
+              <Icon 
+                name={social.icon} 
+                class="w-8 h-8 text-accent group-hover:text-background transition-colors duration-500" 
+              />
+            </div>
+
+            <div class="relative z-10 text-center">
+              <h3 class="text-maintext font-heading text-lg font-bold mb-2 group-hover:text-accent transition-colors">
+                {social.name}
+              </h3>
+              <p class="text-subtext text-[10px] uppercase tracking-widest font-bold opacity-60">
+                {social.url.includes('mailto:') ? 'Napisz wiadomość' : 'Zobacz profil'}
+              </p>
+            </div>
+            
+            <div class="absolute -right-2 -bottom-2 text-accent/5 font-black text-6xl select-none group-hover:text-accent/10 transition-colors">
+              0{localData.socials.filter(s => s.showInContact).indexOf(social) + 1}
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="contact-footer opacity-0 pt-16 border-t border-white/5">
+        <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+          <div class="order-2 md:order-1 text-center md:text-left flex-1">
+            <p class="text-maintext font-bold text-xl mb-3">{localData.name}</p>
+            
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center justify-center md:justify-start gap-2 text-subtext text-[13px] font-body">
+                <span>👨‍💻</span>Junior IT Specialist at Inspiria.IT
+              </div>
+              <div class="flex items-center justify-center md:justify-start gap-2 text-subtext text-[13px] font-body">
+                <span>🛡️</span> Sekurak Insider | Cybersecurity Enthusiast
+              </div>
+              <div class="flex items-center justify-center md:justify-start gap-2 text-subtext text-[13px] font-body">
+                <span>🎓</span> Computer Science Student at AJP Gorzów Wielkopolski
+              </div>
+            </div>
+
+            <p class="text-subtext/40 text-[9px] tracking-[0.5em] uppercase">© 2026 • Built with passion</p>
+          </div>
+
+          <div class="flex flex-col items-center md:items-end gap-4 order-1 md:order-2 shrink-0">
+            <span class="text-accent text-[10px] uppercase tracking-[0.4em] font-black">Technologia Strony</span>
+            <div class="flex items-center gap-6 px-8 py-4 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-md shadow-2xl">
+              <div class="flex items-center gap-3 group">
+                <Icon name="skill-icons:astro" class="w-6 h-6 group-hover:drop-shadow-[0_0_8px_rgba(255,125,0,0.5)] transition-all duration-300" />
+                <span class="text-xs font-bold text-maintext tracking-widest uppercase">Astro</span>
+              </div>
+              <div class="w-[1px] h-6 bg-white/10"></div>
+              <div class="flex items-center gap-3 group">
+                <Icon name="skill-icons:tailwindcss-dark" class="w-6 h-6 group-hover:drop-shadow-[0_0_8px_rgba(0,180,255,0.5)] transition-all duration-300" />
+                <span class="text-xs font-bold text-maintext tracking-widest uppercase">Tailwind</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-header,
+  .contact-footer,
+  .contact-card {
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .contact-header.reveal,
+  .contact-card.reveal,
+  .contact-footer.reveal {
+    opacity: 1 !important;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const revealContact = () => {
+    const header = document.querySelector('.contact-header');
+    const footer = document.querySelector('.contact-footer');
+    const cards = document.querySelectorAll('.contact-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target as HTMLElement;
+          if (target.classList.contains('contact-card')) {
+            const index = Array.from(cards).indexOf(target);
+            setTimeout(() => { target.classList.add('reveal'); }, index * 100);
+          } else {
+            target.classList.add('reveal');
+          }
+          observer.unobserve(target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    if (header) observer.observe(header);
+    if (footer) observer.observe(footer);
+    cards.forEach(card => observer.observe(card));
+  }
+  
+  revealContact();
+  document.addEventListener('astro:after-swap', revealContact);
+</script>

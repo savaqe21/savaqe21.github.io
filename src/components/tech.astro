@@ -1,0 +1,138 @@
+---
+import { Icon } from 'astro-icon/components';
+import localTechData from '../data/tech.json';
+
+interface Skill {
+  name: string;
+  icon: string;
+}
+
+interface Category {
+  title: string;
+  skills: Skill[];
+}
+
+const BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
+let categories: Category[];
+
+try {
+  if (BASE_URL) {
+    const response = await fetch(`${BASE_URL}/tech`);
+    const data = await response.json();
+    categories = data.categories;
+  } else {
+    categories = localTechData.categories;
+  }
+} catch {
+  categories = localTechData.categories;
+}
+---
+
+<section id="tech" class="section-container overflow-hidden">
+  <div class="container mx-auto">
+    <div class="tech-header opacity-0 mb-16">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-maintext mb-2 flex items-center gap-4">
+        <span class="text-accent">/</span> Kompetencje
+      </h2>
+      <p class="text-subtext font-body text-sm max-w-md italic border-l-2 border-accent/10 pl-4">
+        Zestaw technologii i narzędzi podzielony na obszary zawodowe oraz pasje.
+      </p>
+    </div>
+
+    <div class="space-y-20">
+      {categories.map((category: Category) => (
+        <div class="space-y-8">
+          {/* Czysty nagłówek bez linii obok */}
+          <h3 class="font-heading text-[10px] uppercase tracking-[0.5em] text-accent font-black">
+            {category.title}
+          </h3>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {category.skills.map((skill: Skill) => (
+              <div class="skill-card-wrapper opacity-0 group relative p-[1px] rounded-xl transition-all duration-500 hover:-translate-y-2">
+                
+                {/* NEONOWA RAMKA */}
+                <div class="absolute inset-0 bg-accent/20 rounded-xl blur-[1px] group-hover:bg-accent/40 group-hover:blur-[4px] transition-all duration-500"></div>
+
+                {/* GŁÓWNY KAFELEK */}
+                <div class="relative flex items-center gap-4 p-4 rounded-[11px] bg-background/80 backdrop-blur-md border border-accent/20 group-hover:border-accent group-hover:bg-accent/5 transition-all duration-500 h-full">
+                  
+                  <div class="shrink-0 w-11 h-11 flex items-center justify-center rounded-lg bg-accent/5 border border-white/5 transition-colors group-hover:bg-accent/10">
+                    <Icon 
+                      name={skill.icon} 
+                      class="w-6 h-6 text-accent group-hover:scale-110 transition-all duration-500 group-hover:drop-shadow-[0_0_8px_var(--color-accent)]" 
+                    />
+                  </div>
+                  
+                  <div class="flex flex-col min-w-0">
+                    <span class="font-body text-[12px] font-bold tracking-tight text-maintext group-hover:text-white transition-colors duration-300 leading-tight">
+                      {skill.name}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .tech-header,
+  .skill-card-wrapper {
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .tech-header.reveal,
+  .skill-card-wrapper.reveal {
+    opacity: 1 !important;
+    transform: translateY(0);
+  }
+
+  /* Subtelne pływanie kafelków */
+  .skill-card-wrapper {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: var(--float-delay, 0s);
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+</style>
+
+<script>
+  function initTech() {
+    const cards = document.querySelectorAll('.skill-card-wrapper');
+    
+    cards.forEach((card) => {
+      (card as HTMLElement).style.setProperty('--float-delay', `${Math.random() * 5}s`);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const target = entry.target as HTMLElement;
+          if (target.classList.contains('tech-header')) {
+            target.classList.add('reveal');
+          } else {
+            const cardsArray = Array.from(cards);
+            const index = cardsArray.indexOf(target);
+            setTimeout(() => {
+              target.classList.add('reveal');
+            }, (index % 5) * 50);
+          }
+          observer.unobserve(target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.tech-header, .skill-card-wrapper').forEach(el => observer.observe(el));
+  }
+
+  initTech();
+  document.addEventListener('astro:after-swap', initTech);
+</script>

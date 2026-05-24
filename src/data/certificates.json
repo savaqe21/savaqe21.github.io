@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Mega Sekurak Hacking Party",
+    "issuer": "Securitum",
+    "date": "Paź 2025",
+    "link": "#",
+    "icon": "mdi:shield-check",
+    "skills": "System and Network Administration, Cybersecurity, Pentesting"
+  },
+  {
+    "title": "Sekurak Academy",
+    "issuer": "Securitum",
+    "date": "Gru 2025",
+    "link": "#",
+    "icon": "mdi:school",
+    "skills": "System and Network Administration, IT Infrastructure Management"
+  },
+  {
+    "title": "Narzędziownik AI",
+    "issuer": "Securitum",
+    "date": "Cze 2025",
+    "link": "#",
+    "icon": "mdi:robot",
+    "skills": "Artificial Intelligence, Security Tools"
+  },
+  {
+    "title": "Sekurak Cyberstarter",
+    "issuer": "Securitum",
+    "date": "Maj 2025",
+    "link": "#",
+    "icon": "mdi:rocket-launch",
+    "skills": "System and Network Administration, Cybersecurity, Pentesting"
+  },
+  {
+    "title": "Dyplom Kwalifikacji Zawodowej - Technik Informatyk",
+    "issuer": "OKE Poznań",
+    "date": "Maj 2024",
+    "link": "#",
+    "icon": "mdi:certificate",
+    "skills": "System and Network Administration, IT Infrastructure Management"
+  },
+  {
+    "title": "CCNA: Switching, Routing, and Wireless Essentials",
+    "issuer": "Cisco",
+    "date": "Cze 2021",
+    "link": "#",
+    "icon": "simple-icons:cisco",
+    "skills": "Network Switching, Routing, Wireless"
+  },
+  {
+    "title": "CCNA: Introduction to Networks",
+    "issuer": "Cisco",
+    "date": "Cze 2021",
+    "link": "#",
+    "icon": "simple-icons:cisco",
+    "skills": "Network Fundamentals, IPv4/IPv6"
+  }
+]
