@@ -19,14 +19,24 @@ const defaultTheme = `${SITE_CONFIG.baseTheme || 'gold'}-dark`;
     <link rel="icon" type="image/png" href="/favicon.ico" />
     <title>{title}</title>
 
-    <script is:inline define:vars={{ defaultTheme }}>
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme && (savedTheme.endsWith('-dark') || savedTheme.endsWith('-light'))) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } else {
-        document.documentElement.setAttribute('data-theme', defaultTheme);
-        localStorage.setItem('theme', defaultTheme);
-      }
+    <script is:inline define:vars={{ baseTheme: SITE_CONFIG.baseTheme || 'gold' }}>
+      (function() {
+        const currentHour = new Date().getHours();
+        
+        // Od 8:00 do 15:59 wymuszamy tryb jasny. W pozostałych godzinach tryb ciemny.
+        const isBusinessHours = currentHour >= 8 && currentHour < 16;
+        
+        const targetTheme = isBusinessHours ? `${baseTheme}-light` : `${baseTheme}-dark`;
+        const themeClass = isBusinessHours ? 'light' : 'dark';
+
+        // Aplikujemy natychmiast na tag HTML przed wyrenderowaniem strony, aby uniknąć mignięć
+        document.documentElement.setAttribute('data-theme', targetTheme);
+        document.documentElement.classList.remove('light', 'dark');
+        document.documentElement.classList.add(themeClass);
+        
+        // Zapisujemy do localStorage dla spójności działania innych podzespołów systemu
+        localStorage.setItem('theme', targetTheme);
+      })();
     </script>
   </head>
   
@@ -47,8 +57,11 @@ const defaultTheme = `${SITE_CONFIG.baseTheme || 'gold'}-dark`;
 ▝▀ ▘ ▘ ▘ ▘ ▘▝▘▘▀▀▘▀▀▘▝▀ 
 `;
           
-          // Renderowanie baneru w złotym kolorze
-          console.log(`%c${savaqeBanner}`, "color: #E5D283; font-weight: bold; font-family: monospace; line-height: 1.2;");
+          // Wykrywamy aktualny motyw, żeby dopasować kolor logotypu w konsoli deweloperskiej
+          const isLight = document.documentElement.getAttribute('data-theme').endsWith('-light');
+          const bannerColor = isLight ? "color: #b59410;" : "color: #E5D283;"; 
+          
+          console.log(`%c${savaqeBanner}`, `${bannerColor} font-weight: bold; font-family: monospace; line-height: 1.2;`);
           
           // 1. Spersonalizowane logi systemowe
           //console.log("%c[+] PRIVILEGE LEVEL: ROOT@SAVAQE21-PORTFOLIO", "color: #E5D283; font-weight: bold; font-family: monospace;");
