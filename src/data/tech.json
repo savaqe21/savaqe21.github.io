@@ -6,7 +6,8 @@
         { "name": "System Administration", "icon": "mdi:server-security" },
         { "name": "Network Administration", "icon": "mdi:router-network" },
         { "name": "IT Infrastructure", "icon": "mdi:office-building-cog" },
-        { "name": "Technical Support", "icon": "mdi:hammer-wrench" }
+        { "name": "Technical Support", "icon": "mdi:hammer-wrench" },
+        { "name": "Troubleshooting", "icon": "mdi:monitor-dashboard" }
       ]
     },
     {
@@ -14,7 +15,9 @@
       "skills": [
         { "name": "Cybersecurity", "icon": "mdi:shield-lock" },
         { "name": "Pentesting", "icon": "mdi:bug-check" },
-        { "name": "IoT", "icon": "mdi:chip" }
+        { "name": "IoT", "icon": "mdi:chip" },
+        { "name": "OSINT", "icon": "mdi:incognito" },
+        { "name": "AI", "icon": "mdi:brain" }
       ]
     },
     {

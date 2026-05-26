@@ -1,11 +1,43 @@
 [
   {
-    "title": "Mega Sekurak Hacking Party",
+    "title": "Ethical Hacker",
+    "issuer": "Cisco",
+    "date": "Maj 2026",
+    "link": "#",
+    "icon": "simple-icons:cisco",
+    "skills": "Cybersecurity and Pentesting"
+  },
+  {
+    "title": "Praktyczne wprowadzenie do bezpieczeństwa IPv6",
     "issuer": "Securitum",
-    "date": "Paź 2025",
+    "date": "Kwi 2026",
     "link": "#",
     "icon": "mdi:shield-check",
-    "skills": "System and Network Administration, Cybersecurity, Pentesting"
+    "skills": "System and Network Administration, IT Infrastructure Management"
+  },
+  {
+    "title": "Praktyczne wprowadzenie do bezpieczeństwa sieci",
+    "issuer": "Securitum",
+    "date": "Lut 2026",
+    "link": "#",
+    "icon": "mdi:shield-check",
+    "skills": "System and Network Administration, Cybersecurity and Pentesting"
+  },
+  {
+    "title": "Praktyczne bezpieczeństwo windows",
+    "issuer": "Securitum",
+    "date": "Sty 2026",
+    "link": "#",
+    "icon": "mdi:shield-check",
+    "skills": "System and Network Administration, Cybersecurity and Pentesting"
+  },
+  {
+    "title": "Praktyczne bezpieczeństwo frontendru aplikacji webowych",
+    "issuer": "Securitum",
+    "date": "Gru 2025",
+    "link": "#",
+    "icon": "mdi:shield-check",
+    "skills": "Cybersecurity and Pentesting, Web Development"
   },
   {
     "title": "Sekurak Academy",
@@ -13,15 +45,23 @@
     "date": "Gru 2025",
     "link": "#",
     "icon": "mdi:school",
-    "skills": "System and Network Administration, IT Infrastructure Management"
+    "skills": "Cybersecurity and Pentesting, AI & OSINT, System and Network Administration, IT Infrastructure Managment, Embedded Systems and IoT"
   },
   {
-    "title": "Narzędziownik AI",
+    "title": "Narzędziownik AI & OSINT",
     "issuer": "Securitum",
-    "date": "Cze 2025",
+    "date": "Gru 2025",
     "link": "#",
     "icon": "mdi:robot",
-    "skills": "Artificial Intelligence, Security Tools"
+    "skills": "AI & OSINT"
+  },
+  {
+    "title": "Mega Sekurak Hacking Party",
+    "issuer": "Securitum",
+    "date": "Paź 2025",
+    "link": "#",
+    "icon": "mdi:shield-bug",
+    "skills": "AI & OSINT, System and Network Administration, Cybersecurity and Pentesting"
   },
   {
     "title": "Sekurak Cyberstarter",
@@ -29,15 +69,23 @@
     "date": "Maj 2025",
     "link": "#",
     "icon": "mdi:rocket-launch",
-    "skills": "System and Network Administration, Cybersecurity, Pentesting"
+    "skills": "AI & OSINT, System and Network Administration, Cybersecurity and Pentesting"
   },
   {
     "title": "Dyplom Kwalifikacji Zawodowej - Technik Informatyk",
-    "issuer": "OKE Poznań",
+    "issuer": "Okręgowa Komisja Egzaminacyjna w Poznaniu",
     "date": "Maj 2024",
     "link": "#",
     "icon": "mdi:certificate",
-    "skills": "System and Network Administration, IT Infrastructure Management"
+    "skills": "System and Network Administration, IT Infrastructure Management, Web Development, Database Managment"
+  },
+  {
+    "title": "Introduction to Cybersecurity",
+    "issuer": "Cisco",
+    "date": "Gru 2024",
+    "link": "#",
+    "icon": "simple-icons:cisco",
+    "skills": "Cybersecurity and Pentesting"
   },
   {
     "title": "CCNA: Switching, Routing, and Wireless Essentials",
@@ -45,7 +93,7 @@
     "date": "Cze 2021",
     "link": "#",
     "icon": "simple-icons:cisco",
-    "skills": "Network Switching, Routing, Wireless"
+    "skills": "System and Network Administration"
   },
   {
     "title": "CCNA: Introduction to Networks",
@@ -53,6 +101,6 @@
     "date": "Cze 2021",
     "link": "#",
     "icon": "simple-icons:cisco",
-    "skills": "Network Fundamentals, IPv4/IPv6"
+    "skills": "System and Network Administration"
   }
 ]
