@@ -2,15 +2,15 @@
   {
     "platform": "PortSwigger Academy",
     "rank": "Apprentice",
-    "points": "6 Labs",
-    "pwned": "Web Security",
+    "points": "2%",
+    "pwned": "8 Labs",
     "link": "#",
     "icon": "simple-icons:portswigger",
     "color": "#FF6633"
   },
   {
     "platform": "Sekurak CTF",
-    "rank": "Active Player",
+    "rank": "Sekurak Academy Hacker",
     "points": "40",
     "pwned": "5",
     "link": "#",
