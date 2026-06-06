@@ -2,8 +2,8 @@
   {
     "platform": "PortSwigger Academy",
     "rank": "Apprentice",
-    "points": "2%",
-    "pwned": "8 Labs",
+    "points": "5%",
+    "pwned": "15 Labs",
     "link": "#",
     "icon": "simple-icons:portswigger",
     "color": "#FF6633"
@@ -14,7 +14,7 @@
     "points": "40",
     "pwned": "5",
     "link": "#",
-    "icon": "mdi:shield-bug-outline",
+    "icon": "SekurakLogo.png",
     "color": "#B11F24"
   },
   {
