@@ -1,5 +1,19 @@
 [
   {
+    "title": "KcalTracker",
+    "description": "Minimalistyczny dashboard dietetyczny w trybie Dark Mode do śledzenia makroskładników i deficytu kalorycznego. Wyposażony w dynamiczny odczyt danych wprost z plików JSON bez konieczności przebudowywania aplikacji oraz zaawansowane wykresy Area i RadialBar.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Recharts",
+      "Framer Motion"
+    ],
+    "platforms": ["web"],
+    "link": "https://savaqe21.github.io/KcalTracker/",
+    "category": "Hobby"
+  },
+  {
     "title": "Realtime-Object-Detection",
     "description": "System wizyjny do wykrywania obiektów (długopisy, kalkulatory) w czasie rzeczywistym, wytrenowany i zoptymalizowany lokalnie na architekturze Apple Silicon przy użyciu MPS.",
     "tech": [
