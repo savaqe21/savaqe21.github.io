@@ -36,8 +36,7 @@
     "date": "Lut 2026",
     "link": "#",
     "linkPdf": [
-      "/cert/sekurak/Praktyczne_wprowadzenie_do_bezpieczenstwa_sieci_V1.pdf",
-      "/cert/sekurak/Praktyczne_wprowadzenie_do_bezpieczenstwa_sieci_V2.pdf"
+      "/cert/sekurak/Praktyczne_wprowadzenie_do_bezpieczenstwa_sieci_V1_&_V2.pdf"
     ],
     "icon": "mdi:shield-check",
     "skills": "System and Network Administration, Cybersecurity and Pentesting"
@@ -79,8 +78,7 @@
     "date": "Gru 2025",
     "link": "#",
     "linkPdf": [
-      "/cert/sekurak/Certyfikat_Uczestnictwa_w_Szkoleniu_Narzedziownik_AI_2.0_reloaded.pdf",
-      "/cert/sekurak/Certyfikat_Uczestnictwa_w_Szkoleniu_Narzedziownik_OSINT_2.0_reloaded.pdf"
+      "/cert/sekurak/Certyfikat_Uczestnictwa_w_Szkoleniu_Narzedziownik_AI_&_OSINT_2.0_reloaded.pdf"
     ],
     "icon": "mdi:robot",
     "skills": "AI & OSINT"
