@@ -1,9 +1,21 @@
 [
   {
+    "title": "Sekurak Academy Hacker Websec",
+    "issuer": "Securitum",
+    "date": "Czerwiec 2026",
+    "link": "#",
+    "linkPdf": [
+      "/cert/sekurak/Certyfikat_ukonczenia_Sekurak_Academy_Hacker_Websec.pdf"
+    ],
+    "icon": "mdi:console-line",
+    "skills": "Cybersecurity and Pentesting"
+  },
+  {
     "title": "Ethical Hacker",
     "issuer": "Cisco",
     "date": "Maj 2026",
-    "link": "#",
+    "link": "https://www.credly.com/badges/04a183bc-f2ae-48bc-acca-877ee622abef/linked_in_profile",
+    "linkPdf": ["/cert/cisco/Cisco_Ethical_Hacker.pdf"],
     "icon": "simple-icons:cisco",
     "skills": "Cybersecurity and Pentesting"
   },
@@ -12,6 +24,9 @@
     "issuer": "Securitum",
     "date": "Kwi 2026",
     "link": "#",
+    "linkPdf": [
+      "/cert/sekurak/Praktyczne_wprowadzenie_do_bezpieczenstwa_IPv6.pdf"
+    ],
     "icon": "mdi:shield-check",
     "skills": "System and Network Administration, IT Infrastructure Management"
   },
@@ -20,6 +35,10 @@
     "issuer": "Securitum",
     "date": "Lut 2026",
     "link": "#",
+    "linkPdf": [
+      "/cert/sekurak/Praktyczne_wprowadzenie_do_bezpieczenstwa_sieci_V1.pdf",
+      "/cert/sekurak/Praktyczne_wprowadzenie_do_bezpieczenstwa_sieci_V2.pdf"
+    ],
     "icon": "mdi:shield-check",
     "skills": "System and Network Administration, Cybersecurity and Pentesting"
   },
@@ -28,6 +47,7 @@
     "issuer": "Securitum",
     "date": "Sty 2026",
     "link": "#",
+    "linkPdf": ["/cert/sekurak/Praktyczne_bezpieczenstwo_windows.pdf"],
     "icon": "mdi:shield-check",
     "skills": "System and Network Administration, Cybersecurity and Pentesting"
   },
@@ -36,6 +56,9 @@
     "issuer": "Securitum",
     "date": "Gru 2025",
     "link": "#",
+    "linkPdf": [
+      "/cert/sekurak/Praktyczne_bezpieczenstwo_frontendu_aplikacji_webowych_xss.pdf"
+    ],
     "icon": "mdi:shield-check",
     "skills": "Cybersecurity and Pentesting, Web Development"
   },
@@ -44,6 +67,9 @@
     "issuer": "Securitum",
     "date": "Gru 2025",
     "link": "#",
+    "linkPdf": [
+      "/cert/sekurak/Dyplom_ukonczenia_Sekurak_Academy_2023-2025.pdf"
+    ],
     "icon": "mdi:school",
     "skills": "Cybersecurity and Pentesting, AI & OSINT, System and Network Administration, IT Infrastructure Managment, Embedded Systems and IoT"
   },
@@ -52,6 +78,10 @@
     "issuer": "Securitum",
     "date": "Gru 2025",
     "link": "#",
+    "linkPdf": [
+      "/cert/sekurak/Certyfikat_Uczestnictwa_w_Szkoleniu_Narzedziownik_AI_2.0_reloaded.pdf",
+      "/cert/sekurak/Certyfikat_Uczestnictwa_w_Szkoleniu_Narzedziownik_OSINT_2.0_reloaded.pdf"
+    ],
     "icon": "mdi:robot",
     "skills": "AI & OSINT"
   },
@@ -60,6 +90,9 @@
     "issuer": "Securitum",
     "date": "Paź 2025",
     "link": "#",
+    "linkPdf": [
+      "/cert/sekurak/Certyfikat_uczestnictwa_w_konferencji_Mega_Sekurak_Hacking_Party_2025.pdf"
+    ],
     "icon": "mdi:shield-bug",
     "skills": "AI & OSINT, System and Network Administration, Cybersecurity and Pentesting"
   },
@@ -68,6 +101,9 @@
     "issuer": "Securitum",
     "date": "Maj 2025",
     "link": "#",
+    "linkPdf": [
+      "/cert/sekurak/Certyfikat_uczestnictwa_w_konferencji_Cyberstarter_2025.pdf"
+    ],
     "icon": "mdi:rocket-launch",
     "skills": "AI & OSINT, System and Network Administration, Cybersecurity and Pentesting"
   },
@@ -76,6 +112,7 @@
     "issuer": "Okręgowa Komisja Egzaminacyjna w Poznaniu",
     "date": "Maj 2024",
     "link": "#",
+    "linkPdf": [],
     "icon": "mdi:certificate",
     "skills": "System and Network Administration, IT Infrastructure Management, Web Development, Database Managment"
   },
@@ -83,7 +120,8 @@
     "title": "Introduction to Cybersecurity",
     "issuer": "Cisco",
     "date": "Gru 2024",
-    "link": "#",
+    "link": "https://www.credly.com/badges/62d98fe7-cbc3-43fc-9333-68b5454866c4/linked_in_profile",
+    "linkPdf": ["/cert/cisco/Cisco_Introduction_to_Cybersecurity.pdf"],
     "icon": "simple-icons:cisco",
     "skills": "Cybersecurity and Pentesting"
   },
@@ -91,7 +129,10 @@
     "title": "CCNA: Switching, Routing, and Wireless Essentials",
     "issuer": "Cisco",
     "date": "Cze 2021",
-    "link": "#",
+    "link": "https://www.credly.com/badges/b72d4acb-56d3-4a02-b24b-d4978eecd19d/linked_in_profile",
+    "linkPdf": [
+      "/cert/cisco/CCNA_v7_Podstawy_przełączania_routingu_i_łączności_bezprzewodowej.pdf"
+    ],
     "icon": "simple-icons:cisco",
     "skills": "System and Network Administration"
   },
@@ -99,7 +140,8 @@
     "title": "CCNA: Introduction to Networks",
     "issuer": "Cisco",
     "date": "Cze 2021",
-    "link": "#",
+    "link": "https://www.credly.com/badges/58752e13-7204-4267-a999-16015ba70623/linked_in_profile",
+    "linkPdf": ["/cert/cisco/CCNA_v7_Wprowadzenie_do_sieci.pdf"],
     "icon": "simple-icons:cisco",
     "skills": "System and Network Administration"
   }
