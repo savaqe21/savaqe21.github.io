@@ -18,6 +18,15 @@
     "color": "#B11F24"
   },
   {
+    "platform": "TryHackMe",
+    "rank": "Top 55%",
+    "points": "226",
+    "pwned": "5 Rooms",
+    "link": "https://tryhackme.com/p/savaqe21",
+    "icon": "simple-icons:tryhackme",
+    "color": "#FF0000"
+  },
+  {
     "platform": "Hack The Box",
     "rank": "Apprentice",
     "points": "0",
@@ -25,14 +34,5 @@
     "link": "https://app.hackthebox.com/public/users/2143818",
     "icon": "simple-icons:hackthebox",
     "color": "#9FEF00"
-  },
-  {
-    "platform": "TryHackMe",
-    "rank": "Top 85%",
-    "points": "0",
-    "pwned": "1 Rooms",
-    "link": "https://tryhackme.com/p/savaqe21",
-    "icon": "simple-icons:tryhackme",
-    "color": "#FF0000"
   }
 ]
