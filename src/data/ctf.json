@@ -1,38 +1,58 @@
 [
   {
-    "platform": "PortSwigger Academy",
-    "rank": "Apprentice",
-    "points": "5%",
-    "pwned": "15 Labs",
-    "link": "#",
-    "icon": "simple-icons:portswigger",
-    "color": "#FF6633"
+    "platform": "TryHackMe",
+    "link": "https://tryhackme.com/p/savaqe21",
+    "icon": "simple-icons:tryhackme",
+    "color": "#FF0000",
+    "stats": [
+      { "label": "Ranga", "value": "Visionary" },
+      { "label": "Pozycja", "value": "Top 30%" },
+      { "label": "Punkty", "value": "1500.5" },
+      { "label": "Pokoje", "value": "15 Pwned" },
+      { "label": "Odznaki", "value": "4" },
+      { "label": "Streak", "value": "3 Dni" },
+      { "label": "Liga", "value": "Silver" }
+    ]
   },
   {
     "platform": "Sekurak CTF",
-    "rank": "Academy Hacker",
-    "points": "40",
-    "pwned": "5",
     "link": "#",
     "icon": "SekurakLogo.png",
-    "color": "#B11F24"
+    "color": "#B11F24",
+    "stats": [
+      { "label": "Notatka", "value": "Zadania stażowe" },
+      { "label": "Ranga", "value": "Academy Hacker" },
+      { "label": "Punkty", "value": "40" },
+      { "label": "Wyzwania", "value": "5 Solved" }
+    ]
   },
   {
-    "platform": "TryHackMe",
-    "rank": "Top 55%",
-    "points": "226",
-    "pwned": "5 Rooms",
-    "link": "https://tryhackme.com/p/savaqe21",
-    "icon": "simple-icons:tryhackme",
-    "color": "#FF0000"
+    "platform": "PortSwigger Academy",
+    "link": "#",
+    "icon": "simple-icons:portswigger",
+    "color": "#FF6633",
+    "stats": [
+      { "label": "Poziom", "value": "Newbie" },
+      { "label": "Postęp", "value": "5%" },
+      { "label": "Apprentice", "value": "15/61" },
+      { "label": "Practitioner", "value": "0/174" },
+      { "label": "Expert", "value": "0/39" }
+    ]
   },
   {
     "platform": "Hack The Box",
-    "rank": "Apprentice",
-    "points": "0",
-    "pwned": "0 Machines",
     "link": "https://app.hackthebox.com/public/users/2143818",
     "icon": "simple-icons:hackthebox",
-    "color": "#9FEF00"
+    "color": "#9FEF00",
+    "stats": [
+      { "label": "Poziom", "value": "Lvl 26" },
+      { "label": "Ranga", "value": "Apprentice" },
+      { "label": "Maszyny", "value": "0/535" },
+      { "label": "Wyzwania", "value": "0/833" },
+      { "label": "Sherlocks", "value": "0/155" },
+      { "label": "Pro Labs", "value": "0/11" },
+      { "label": "Mini Pro Labs", "value": "0/22" },
+      { "label": "Fortresses", "value": "0/6" }
+    ]
   }
 ]
