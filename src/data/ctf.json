@@ -6,11 +6,11 @@
     "color": "#FF0000",
     "stats": [
       { "label": "Ranga", "value": "Visionary" },
-      { "label": "Pozycja", "value": "Top 30%" },
-      { "label": "Punkty", "value": "1500.5" },
-      { "label": "Pokoje", "value": "15 Pwned" },
-      { "label": "Odznaki", "value": "4" },
-      { "label": "Streak", "value": "3 Dni" },
+      { "label": "Pozycja", "value": "Top 25%" },
+      { "label": "Punkty", "value": "1720.5" },
+      { "label": "Pokoje", "value": "18 Pwned" },
+      { "label": "Odznaki", "value": "5" },
+      { "label": "Streak", "value": "4 Dni" },
       { "label": "Liga", "value": "Silver" }
     ]
   },
