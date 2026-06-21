@@ -5,12 +5,12 @@
     "icon": "simple-icons:tryhackme",
     "color": "#FF0000",
     "stats": [
-      { "label": "Ranga", "value": "Visionary" },
-      { "label": "Pozycja", "value": "Top 25%" },
-      { "label": "Punkty", "value": "1720.5" },
-      { "label": "Pokoje", "value": "18 Pwned" },
-      { "label": "Odznaki", "value": "5" },
-      { "label": "Streak", "value": "4 Dni" },
+      { "label": "Ranga", "value": "Hacker" },
+      { "label": "Pozycja", "value": "Top 15%" },
+      { "label": "Punkty", "value": "4269.5" },
+      { "label": "Pokoje", "value": "45 Pwned" },
+      { "label": "Odznaki", "value": "8" },
+      { "label": "Streak", "value": "10 Dni" },
       { "label": "Liga", "value": "Silver" }
     ]
   },
