@@ -6,12 +6,13 @@
     "color": "#FF0000",
     "stats": [
       { "label": "Ranga", "value": "Hacker" },
-      { "label": "Pozycja", "value": "Top 15%" },
-      { "label": "Punkty", "value": "4269.5" },
-      { "label": "Pokoje", "value": "45 Pwned" },
-      { "label": "Odznaki", "value": "8" },
-      { "label": "Streak", "value": "10 Dni" },
-      { "label": "Liga", "value": "Silver" }
+      { "label": "Pozycja", "value": "169591" },
+      { "label": "Punkty", "value": "5131.5" },
+      { "label": "Pokoje", "value": "51" },
+      { "label": "Zdolności", "value": "34" },
+      { "label": "Odznaki", "value": "10" },
+      { "label": "Streak", "value": "16" },
+      { "label": "Liga", "value": "Gold" }
     ]
   },
   {
@@ -20,10 +21,10 @@
     "icon": "SekurakLogo.png",
     "color": "#B11F24",
     "stats": [
-      { "label": "Notatka", "value": "Zadania stażowe" },
+      { "label": "Rodzaj", "value": "Zadania stażowe" },
       { "label": "Ranga", "value": "Academy Hacker" },
       { "label": "Punkty", "value": "40" },
-      { "label": "Wyzwania", "value": "5 Solved" }
+      { "label": "Wyzwania", "value": "5/5" }
     ]
   },
   {
