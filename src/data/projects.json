@@ -1,5 +1,13 @@
 [
   {
+    "title": "EbayTemplates",
+    "description": "Kolekcja nowoczesnych, responsywnych szablonów aukcji eBay, stworzonych przy użyciu zaawansowanych modeli agentowych.",
+    "tech": ["HTML", "CSS"],
+    "platforms": ["web"],
+    "link": "https://savaqe21.github.io/EbayTemplates/",
+    "category": "Hobby"
+  },
+  {
     "title": "KcalTracker",
     "description": "Minimalistyczny dashboard dietetyczny w trybie Dark Mode do śledzenia makroskładników i deficytu kalorycznego. Wyposażony w dynamiczny odczyt danych wprost z plików JSON bez konieczności przebudowywania aplikacji oraz zaawansowane wykresy Area i RadialBar.",
     "tech": [
