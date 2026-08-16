@@ -1,5 +1,13 @@
 [
   {
+    "title": "TryHackMe-Dashboard",
+    "description": "Vibecode, osobisty dashboard postępów na TryHackMe.",
+    "tech": ["HTML", "CSS", "JavaScript", "JSON"],
+    "platforms": ["web"],
+    "link": "https://savaqe21.github.io/TryHackMe-Dashboard/",
+    "category": "Hobby"
+  },
+  {
     "title": "EbayTemplates",
     "description": "Kolekcja nowoczesnych, responsywnych szablonów aukcji eBay, stworzonych przy użyciu zaawansowanych modeli agentowych.",
     "tech": ["HTML", "CSS"],
