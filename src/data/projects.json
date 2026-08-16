@@ -72,7 +72,7 @@
     "description": "Moje wcześniejsze portfolio techniczne. Projekt skupia się na czystym kodzie i nowoczesnym designie, wykorzystując zaawansowane techniki stylowania CSS oraz interaktywność JavaScript.",
     "tech": ["CSS", "HTML", "JavaScript"],
     "platforms": ["web"],
-    "link": "https://github.com/savaqe21/MyWeb",
+    "link": "https://savaqe21.github.io/MyWeb/Portfolio/3-WebPagev3.0/index.html",
     "category": "Hobby"
   },
   {
@@ -88,7 +88,7 @@
     "description": "Zaawansowana aplikacja webowa typu Fullstack. Wykorzystuje framework Django do obsługi logiki serwerowej i baz danych, połączony z responsywnym interfejsem użytkownika stworzonym w czystym CSS i JavaScript.",
     "tech": ["Python", "Django", "JavaScript", "CSS", "HTML"],
     "platforms": ["web"],
-    "link": "https://github.com/savaqe21/MyDjango",
+    "link": "https://flesniakprogintern.pythonanywhere.com",
     "category": "Studia"
   },
   {
